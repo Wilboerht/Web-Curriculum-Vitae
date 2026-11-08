@@ -40,5 +40,6 @@ export interface ProjectUi {
   roleLabel: string;
   timelineLabel: string;
   websiteLabel: string;
+  stackLabel: string;
   printWarning: string;
 }

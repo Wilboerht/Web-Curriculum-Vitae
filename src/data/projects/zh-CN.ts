@@ -19,6 +19,7 @@ export const ui: ProjectUi = {
   roleLabel: "角色",
   timelineLabel: "时间",
   websiteLabel: "网站",
+  stackLabel: "技术栈",
   printWarning: "本简历含个人隐私信息，仅限招聘评估使用，未经授权禁止存储、转发或用于其他用途。",
 };
 
@@ -45,7 +46,11 @@ export const projects: Project[] = [
       },
       {
         title: "管理后台与安全治理：",
-        body: "搭建覆盖产品 / 分类 / 会员 / 积分兑礼 / 线下消费补录 / 招聘职位 / 消息 / OAuth 客户端的管理后台（Tiptap 富文本），配套 TOTP 双因素认证（2FA）与敏感操作二次验证（Step-up）、操作审计与每日完整性校验锚点、定时任务、基于数据库的持久化限流及 Webhook 失败重试；实现 SEO / GEO / AEO（生成式与答案引擎优化；动态 sitemap、AI 爬虫白名单与 Content-Signal、Organization / Product / FAQ / HowTo JSON-LD、llms.txt / llms-full.txt、产品级 GEO FAQ（最多 20 组，后台可编辑 + 规则兜底）、百度推送与 IndexNow）。",
+        body: "搭建覆盖产品 / 分类 / 会员 / 积分兑礼 / 线下消费补录 / 招聘职位 / 消息 / OAuth 客户端的管理后台（Tiptap 富文本），配套 TOTP 双因素认证（2FA）与敏感操作二次验证（Step-up）、操作审计与每日完整性校验锚点、定时任务、基于数据库的持久化限流及 Webhook 失败重试。",
+      },
+      {
+        title: "搜索与 AI 可发现性（SEO / GEO / AEO）：",
+        body: "实现 SEO / GEO / AEO（生成式与答案引擎优化；动态 sitemap、AI 爬虫白名单与 Content-Signal、Organization / Product / FAQ / HowTo JSON-LD、llms.txt / llms-full.txt、产品级 GEO FAQ（最多 20 组，后台可编辑 + 规则兜底）、百度推送与 IndexNow）。",
       },
     ],
   },

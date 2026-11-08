@@ -19,6 +19,7 @@ export const ui: ProjectUi = {
   roleLabel: "Rolle",
   timelineLabel: "Zeitraum",
   websiteLabel: "Website",
+  stackLabel: "Tech-Stack",
   printWarning: "Dieser Lebenslauf enthält persönliche Daten und ist ausschließlich für die Bewertung im Rahmen von Einstellungsverfahren bestimmt. Unbefugte Speicherung, Weitergabe oder sonstige Nutzung ist untersagt.",
 };
 
@@ -45,7 +46,11 @@ export const projects: Project[] = [
       },
       {
         title: "Admin-Konsole & Sicherheits-Governance:",
-        body: "Eine Admin-Konsole für Produkte / Kategorien / Mitglieder / Punkte-Einlösung / manuelle Erfassung von Offline-Käufen / Stellenanzeigen / Nachrichten / OAuth-Clients (Tiptap Rich Text) aufgebaut, mit TOTP-Zwei-Faktor-Authentifizierung und Step-up-Verifizierung für sensible Aktionen, Audit-Logs und täglichen Integritätsprüfungen, geplanten Jobs, datenbankgestütztem Rate-Limiting und Wiederholungsversuchen bei fehlgeschlagenen Webhooks; SEO / GEO / AEO umgesetzt (generative & answer engine optimization; dynamische Sitemap, KI-Crawler-Allowlist & Content-Signal, Organization-/Product-/FAQ-/HowTo-JSON-LD, llms.txt / llms-full.txt, produktspezifische GEO-FAQs (bis zu 20, im Admin-Bereich pflegbar mit regelbasiertem Fallback), Baidu-Push & IndexNow).",
+        body: "Eine Admin-Konsole für Produkte / Kategorien / Mitglieder / Punkte-Einlösung / manuelle Erfassung von Offline-Käufen / Stellenanzeigen / Nachrichten / OAuth-Clients (Tiptap Rich Text) aufgebaut, mit TOTP-Zwei-Faktor-Authentifizierung und Step-up-Verifizierung für sensible Aktionen, Audit-Logs und täglichen Integritätsprüfungen, geplanten Jobs, datenbankgestütztem Rate-Limiting und Wiederholungsversuchen bei fehlgeschlagenen Webhooks.",
+      },
+      {
+        title: "Suche & KI-Auffindbarkeit (SEO / GEO / AEO):",
+        body: "SEO / GEO / AEO umgesetzt (generative & answer engine optimization; dynamische Sitemap, KI-Crawler-Allowlist & Content-Signal, Organization-/Product-/FAQ-/HowTo-JSON-LD, llms.txt / llms-full.txt, produktspezifische GEO-FAQs (bis zu 20, im Admin-Bereich pflegbar mit regelbasiertem Fallback), Baidu-Push & IndexNow).",
       },
     ],
   },

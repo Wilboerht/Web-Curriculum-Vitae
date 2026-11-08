@@ -2,6 +2,7 @@
 import Layout from "../../../layouts/Layout.astro";
 import { LOCALES, getLocaleByCode } from "../../../data/locales";
 import { PROJECT_DATA } from "../../../data/projects";
+import { PROJECT_STACKS } from "../../../data/projects/stacks";
 import type { Project, ProjectUi } from "../../../data/projects";
 import { CONTENT_LAST_UPDATED } from "../../../data/site";
 import "../../../styles/global.css";
@@ -40,6 +41,7 @@ const alternates = Object.fromEntries(
 
 const title = `${project.name} · ${ui.personName}`;
 const details = project.details ?? [];
+const stack = PROJECT_STACKS[slug];
 const year = new Date().getUTCFullYear();
 
 const titleMatch = project.name.match(/^NIHPLOD\s+(.+)$/i);
@@ -171,6 +173,14 @@ const ld = {
                         {project.link.label}
                       </a>
                     </td>
+                  </tr>
+                )
+              }
+              {
+                stack && (
+                  <tr>
+                    <th scope="row">{ui.stackLabel}</th>
+                    <td>{stack}</td>
                   </tr>
                 )
               }

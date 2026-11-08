@@ -19,6 +19,7 @@ export const ui: ProjectUi = {
   roleLabel: "角色",
   timelineLabel: "時間",
   websiteLabel: "網站",
+  stackLabel: "技術棧",
   printWarning: "本履歷含個人私隱資訊，僅限招聘評估使用，未經授權禁止儲存、轉發或用於其他用途。",
 };
 
@@ -45,7 +46,11 @@ export const projects: Project[] = [
       },
       {
         title: "管理後台與安全治理：",
-        body: "搭建覆蓋產品 / 分類 / 會員 / 積分兌禮 / 線下消費補錄 / 招聘職位 / 訊息 / OAuth 客戶端的管理後台（Tiptap 富文字），配套 TOTP 雙因素認證（2FA）與敏感操作二次驗證（Step-up）、操作稽核與每日完整性校驗錨點、定時任務、基於資料庫的持久化限流及 Webhook 失敗重試；實現 SEO / GEO / AEO（生成式與答案引擎優化；動態 sitemap、AI 爬蟲白名單與 Content-Signal、Organization / Product / FAQ / HowTo JSON-LD、llms.txt / llms-full.txt、產品級 GEO FAQ（最多 20 組，後台可編輯 + 規則兜底）、百度推送與 IndexNow）。",
+        body: "搭建覆蓋產品 / 分類 / 會員 / 積分兌禮 / 線下消費補錄 / 招聘職位 / 訊息 / OAuth 客戶端的管理後台（Tiptap 富文字），配套 TOTP 雙因素認證（2FA）與敏感操作二次驗證（Step-up）、操作稽核與每日完整性校驗錨點、定時任務、基於資料庫的持久化限流及 Webhook 失敗重試。",
+      },
+      {
+        title: "搜尋與 AI 可發現性（SEO / GEO / AEO）：",
+        body: "實現 SEO / GEO / AEO（生成式與答案引擎優化；動態 sitemap、AI 爬蟲白名單與 Content-Signal、Organization / Product / FAQ / HowTo JSON-LD、llms.txt / llms-full.txt、產品級 GEO FAQ（最多 20 組，後台可編輯 + 規則兜底）、百度推送與 IndexNow）。",
       },
     ],
   },

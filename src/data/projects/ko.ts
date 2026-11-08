@@ -19,6 +19,7 @@ export const ui: ProjectUi = {
   roleLabel: "역할",
   timelineLabel: "기간",
   websiteLabel: "웹사이트",
+  stackLabel: "기술 스택",
   printWarning: "본 이력서에는 개인정보가 포함되어 있으며 채용 평가 목적으로만 사용 가능합니다. 무단 저장, 재배포 또는 기타 용도로의 사용을 금합니다.",
 };
 
@@ -45,7 +46,11 @@ export const projects: Project[] = [
       },
       {
         title: "관리자 콘솔 & 보안 거버넌스:",
-        body: "상품 / 카테고리 / 회원 / 포인트 교환 / 오프라인 구매 내역 수동 등록 / 채용 공고 / 메시지 / OAuth 클라이언트를 아우르는 관리자 콘솔(Tiptap 리치 텍스트) 구축, TOTP 2단계 인증과 민감 작업 재인증(Step-up), 감사 로그와 일일 무결성 검증 기준점, 예약 작업, 데이터베이스 기반 레이트 리미팅, 웹훅 실패 재시도; SEO / GEO / AEO(생성형·답변 엔진 최적화; 동적 sitemap, AI 크롤러 허용 목록 및 Content-Signal, Organization / Product / FAQ / HowTo JSON-LD, llms.txt / llms-full.txt, 제품별 GEO FAQ(최대 20개, 관리자 편집 가능 + 규칙 기반 폴백), Baidu 푸시 / IndexNow) 구현.",
+        body: "상품 / 카테고리 / 회원 / 포인트 교환 / 오프라인 구매 내역 수동 등록 / 채용 공고 / 메시지 / OAuth 클라이언트를 아우르는 관리자 콘솔(Tiptap 리치 텍스트) 구축, TOTP 2단계 인증과 민감 작업 재인증(Step-up), 감사 로그와 일일 무결성 검증 기준점, 예약 작업, 데이터베이스 기반 레이트 리미팅, 웹훅 실패 재시도.",
+      },
+      {
+        title: "검색 및 AI 발견 가능성(SEO / GEO / AEO):",
+        body: "SEO / GEO / AEO(생성형·답변 엔진 최적화; 동적 sitemap, AI 크롤러 허용 목록 및 Content-Signal, Organization / Product / FAQ / HowTo JSON-LD, llms.txt / llms-full.txt, 제품별 GEO FAQ(최대 20개, 관리자 편집 가능 + 규칙 기반 폴백), Baidu 푸시 / IndexNow) 구현.",
       },
     ],
   },

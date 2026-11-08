@@ -19,6 +19,7 @@ export const ui: ProjectUi = {
   roleLabel: "Role",
   timelineLabel: "Timeline",
   websiteLabel: "Website",
+  stackLabel: "Stack",
   printWarning: "This resume contains personal information and is intended solely for recruitment evaluation. Unauthorized storage, distribution, or other use is prohibited.",
 };
 
@@ -45,7 +46,11 @@ export const projects: Project[] = [
       },
       {
         title: "Admin Console & Security Governance:",
-        body: "Built an admin console covering products / categories / members / points redemption / manual purchase record entry / job postings / messages / OAuth clients (Tiptap rich text), with TOTP two-factor authentication and step-up verification for sensitive actions, operation audit logs and daily integrity checkpoints, scheduled jobs, database-persisted rate limiting, and webhook failure retries; implemented SEO / GEO / AEO (generative & answer engine optimization; dynamic sitemap, AI crawler allowlist & Content-Signal, Organization / Product / FAQ / HowTo JSON-LD, llms.txt / llms-full.txt, product-level GEO FAQs (up to 20, admin-editable with rule-based fallback), Baidu push & IndexNow).",
+        body: "Built an admin console covering products / categories / members / points redemption / manual purchase record entry / job postings / messages / OAuth clients (Tiptap rich text), with TOTP two-factor authentication and step-up verification for sensitive actions, operation audit logs and daily integrity checkpoints, scheduled jobs, database-persisted rate limiting, and webhook failure retries.",
+      },
+      {
+        title: "Search & AI Discoverability (SEO / GEO / AEO):",
+        body: "Implemented SEO / GEO / AEO (generative & answer engine optimization; dynamic sitemap, AI crawler allowlist & Content-Signal, Organization / Product / FAQ / HowTo JSON-LD, llms.txt / llms-full.txt, product-level GEO FAQs (up to 20, admin-editable with rule-based fallback), Baidu push & IndexNow).",
       },
     ],
   },
