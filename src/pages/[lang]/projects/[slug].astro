@@ -1,0 +1,215 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { LOCALES, getLocaleByCode } from "../../../data/locales";
+import { PROJECT_DATA } from "../../../data/projects";
+import type { Project, ProjectUi } from "../../../data/projects";
+import { CONTENT_LAST_UPDATED } from "../../../data/site";
+import "../../../styles/global.css";
+import "../../../styles/project.css";
+
+interface Props {
+  locale: string;
+  project: Project;
+  ui: ProjectUi;
+}
+
+export function getStaticPaths() {
+  return LOCALES.flatMap((locale) => {
+    const data = PROJECT_DATA[locale.code];
+    return data.projects
+      .filter((project) => project.details?.length)
+      .map((project) => ({
+        params: { lang: locale.dir, slug: project.slug },
+        props: {
+          locale: locale.code,
+          project,
+          ui: data.ui,
+        },
+      }));
+  });
+}
+
+const { locale, project, ui } = Astro.props;
+const localeInfo = getLocaleByCode(locale);
+const slug = project.slug;
+const backHref = `${localeInfo.path}#${project.id}`;
+
+const alternates = Object.fromEntries(
+  LOCALES.map((item) => [item.code, `${item.path}projects/${slug}/`]),
+);
+
+const title = `${project.name} · ${ui.personName}`;
+const details = project.details ?? [];
+const year = new Date().getUTCFullYear();
+
+const titleMatch = project.name.match(/^NIHPLOD\s+(.+)$/i);
+const showLogo = Boolean(titleMatch);
+const titleText = titleMatch ? titleMatch[1] : project.name;
+const logoSrc = project.logo ?? "/images/NIHPLOD-logo.svg";
+
+const stripColon = (value: string) => value.replace(/[:：]\s*$/, "");
+
+const ld = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "@id": `https://cv.wilboerht.com${localeInfo.path}projects/${slug}/#project`,
+  name: project.name,
+  description: project.summary,
+  inLanguage: locale,
+  url: `https://cv.wilboerht.com${localeInfo.path}projects/${slug}/`,
+  dateModified: CONTENT_LAST_UPDATED,
+  author: {
+    "@type": "Person",
+    "@id": "https://wilboerht.com/#person",
+    name: ui.personName,
+  },
+  isPartOf: { "@id": `https://cv.wilboerht.com${localeInfo.path}#page` },
+};
+---
+
+<Layout
+  title={title}
+  lang={locale}
+  description={project.summary}
+  ogType="article"
+  alternates={alternates}
+  bodyClass="blog-body"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(ld, null, 2)} />
+  </Fragment>
+
+  <header class="blog-topbar">
+    <div class="blog-topbar__inner">
+        <a class="blog-back" href={backHref}>
+          <svg
+            class="blog-back__icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m12 19-7-7 7-7"></path>
+            <path d="M19 12H5"></path>
+          </svg>
+          <span>{ui.backLabel}</span>
+        </a>
+
+        <label class="blog-lang">
+          <span class="blog-lang__current" aria-hidden="true">{localeInfo.label}</span>
+          <span class="blog-lang__chevron" aria-hidden="true"></span>
+          <select aria-label={ui.languageLabel} onchange="location.href=this.value">
+            {
+              LOCALES.map((item) => (
+                <option value={alternates[item.code]} selected={item.code === locale}>
+                  {item.full}
+                </option>
+              ))
+            }
+          </select>
+        </label>
+    </div>
+
+    <noscript>
+        <nav class="blog-noscript" aria-label={ui.languageLabel}>
+          {
+            LOCALES.map((item) => (
+              <a href={alternates[item.code]} hreflang={item.code} lang={item.code}>
+                {item.full}
+              </a>
+            ))
+          }
+        </nav>
+    </noscript>
+  </header>
+
+  <div class="blog-shell">
+    <div class="blog-layout">
+      <article class="blog-article">
+        <header class="blog-header">
+          <h1 class="blog-title">
+            {
+              showLogo && (
+                <>
+                  <img
+                    class="blog-title__logo"
+                    src={logoSrc}
+                    alt="NIHPLOD"
+                    decoding="async"
+                  />
+                  <span class="blog-title__separator" aria-hidden="true"></span>
+                </>
+              )
+            }
+            <span class="blog-title__text">{titleText}</span>
+          </h1>
+        </header>
+
+        <div class="blog-content">
+          <p class="blog-lead">{project.summary}</p>
+
+          <table class="blog-facts">
+            <caption>{ui.infoLabel}</caption>
+            <tbody>
+              <tr>
+                <th scope="row">{ui.roleLabel}</th>
+                <td>{project.owner}</td>
+              </tr>
+              <tr>
+                <th scope="row">{ui.timelineLabel}</th>
+                <td>{project.date}</td>
+              </tr>
+              {
+                project.link && (
+                  <tr>
+                    <th scope="row">{ui.websiteLabel}</th>
+                    <td>
+                      <a href={project.link.href} target="_blank" rel="noopener noreferrer">
+                        {project.link.label}
+                      </a>
+                    </td>
+                  </tr>
+                )
+              }
+            </tbody>
+          </table>
+
+          {
+            details.map((detail, i) => (
+              <section class="blog-section">
+                <h2 id={`section-${i + 1}`}>{stripColon(detail.title)}</h2>
+                <p>{detail.body}</p>
+              </section>
+            ))
+          }
+        </div>
+      </article>
+
+      <aside class="blog-toc" aria-label={ui.headingsLabel}>
+        <p class="blog-toc__label">{ui.headingsLabel}</p>
+        <ul>
+          {
+            details.map((detail, i) => (
+              <li>
+                <a href={`#section-${i + 1}`}>{stripColon(detail.title)}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="blog-pagefooter">
+    <div class="blog-pagefooter__inner">
+      <p>© {year} {ui.personName}</p>
+      <a href={backHref}>
+        <span aria-hidden="true">←</span>
+        {ui.backLabel}
+      </a>
+    </div>
+  </footer>
+</Layout>

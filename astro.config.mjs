@@ -2,18 +2,12 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { CONTENT_LAST_UPDATED } from './src/data/site.ts';
+import { LOCALES } from './src/data/locales.ts';
+import { PROJECT_PAGE_SLUGS } from './src/data/projects/index.ts';
 
 const SITE = 'https://cv.wilboerht.com';
 
-const locales = [
-  { code: 'zh-CN', path: '/CV-cn/' },
-  { code: 'zh-TW', path: '/CV-tw/' },
-  { code: 'zh-HK', path: '/CV-hk/' },
-  { code: 'en', path: '/CV-en/' },
-  { code: 'de', path: '/CV-de/' },
-  { code: 'ko', path: '/CV-kr/' },
-  { code: 'ja', path: '/CV-jp/' },
-];
+const locales = LOCALES;
 
 // https://astro.build/config
 export default defineConfig({
@@ -29,6 +23,21 @@ export default defineConfig({
             ...locales.map((l) => ({ lang: l.code, url: `${SITE}${l.path}` })),
             { lang: 'x-default', url: `${SITE}/CV-en/` },
           ];
+        }
+
+        // 项目详情页：同一项目的所有语言版本互相声明 alternates
+        for (const locale of locales) {
+          for (const slug of PROJECT_PAGE_SLUGS) {
+            if (item.url === `${SITE}${locale.path}projects/${slug}/`) {
+              item.links = [
+                ...locales.map((l) => ({
+                  lang: l.code,
+                  url: `${SITE}${l.path}projects/${slug}/`,
+                })),
+                { lang: 'x-default', url: `${SITE}/CV-en/projects/${slug}/` },
+              ];
+            }
+          }
         }
         // 使用统一的内容更新时间，避免每次构建都改变 lastmod
         item.lastmod = CONTENT_LAST_UPDATED;

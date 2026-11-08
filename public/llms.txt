@@ -32,4 +32,4 @@ Key facts:
 
 ## 中文摘要
 
-王泓坤，常驻上海的数字化开发经理、全栈工程师，专注 TypeScript / React / Next.js 与 AI / RAG。作为 Moidas（NIHPLOD）大中华区首位工程师，12 个月内从零搭建并上线 7 个核心系统、2,900+ 自动化测试，覆盖品牌官网与会员平台、统一认证（SSO）、AI 护肤顾问、企微 AI 客服、授权验真平台、AI 测肤小程序与会员中心小程序。详见 [简体中文简历](https://cv.wilboerht.com/CV-cn/)。
+王泓坤，常驻上海的数字开发经理、全栈工程师，专注 TypeScript / React / Next.js 与 AI / RAG。作为 Moidas（NIHPLOD）大中华区首位工程师，12 个月内从零搭建并上线 7 个核心系统、2,900+ 自动化测试，覆盖品牌官网与会员平台、统一认证（SSO）、AI 护肤顾问、企微 AI 客服、授权验真平台、AI 测肤小程序与会员中心小程序。详见 [简体中文简历](https://cv.wilboerht.com/CV-cn/)。

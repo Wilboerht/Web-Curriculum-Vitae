@@ -4,8 +4,12 @@ import PrintFooter from "../components/PrintFooter.astro";
 import MermaidDiagram from "../components/MermaidDiagram.astro";
 import { moidasArchitecture } from "../diagrams/moidas-architecture";
 import { CONTENT_LAST_UPDATED } from "../data/site";
+import ProjectSection from "../components/ProjectSection.astro";
+import { PROJECT_DATA } from "../data/projects";
 import "../styles/global.css";
 import "../styles/cv.css";
+
+const projectData = PROJECT_DATA["de"];
 
 const ld = {
   "@context": "https://schema.org",
@@ -192,188 +196,7 @@ const ld = {
       </div>
     </section>
 
-    <section>
-      <div class="project-section-head">
-        <h2>Projekte</h2>
-        <a class="project-github-link" href="https://github.com/Wilboerht" target="_blank" rel="noopener noreferrer" aria-label="Mehr auf GitHub ansehen">
-          <svg class="project-github-link__icon" aria-hidden="true"><use href="#icon-github"></use></svg>
-          Mehr auf GitHub ansehen
-        </a>
-      </div>
-
-      <div class="project-entry" data-project-logo="/images/NIHPLOD-logo.svg" id="project-website">
-        <div class="entry-header">
-          <h3 class="project-name"><button type="button" class="project-name-button" data-project-dialog="project-website" aria-haspopup="dialog">NIHPLOD Offizielle China-Website</button></h3>
-          <span class="entry-date">Nov. 2025 – heute</span>
-        </div>
-        <div class="project-meta">
-          <span class="project-meta-owner">Produkt, UI/UX, Full-Stack-Entwicklung, Deployment und Betrieb eigenverantwortlich geleitet</span> <a href="https://nihplod.cn" target="_blank" rel="noopener noreferrer" class="project-meta-link"><span>nihplod.cn</span><svg class="project-meta-link__icon" aria-hidden="true"><use href="#icon-external"></use></svg></a>
-        </div>
-        <p class="project-summary">Markenwebsite und Mitgliederplattform für den China-Markt: verbindet Produktpräsentation, E-Commerce-Verlinkung, Mitgliederpunkte und Hautprofile in einem integrierten Erlebnis, vereinheitlicht WeChat-, Douyin- und Telefonnummern-Identitäten und unterstützt den Online-Handel von Grund auf sowie Wiederkäufe; 205 API-Routen / 51 Modelle / 2.100+ Tests (dieses System allein).</p>
-        <button type="button" class="project-more" data-project-dialog="project-website" aria-haspopup="dialog" aria-label="Details ansehen: NIHPLOD Offizielle China-Website"><svg class="project-more__icon" aria-hidden="true"><use href="#icon-file-text"></use></svg>Details ansehen</button>
-        <dialog class="project-dialog" id="dialog-project-website">
-          <button type="button" class="project-dialog__close" data-project-dialog-close autofocus aria-label="Schließen">&times;</button>
-          <div class="project-dialog__panel">
-            <div class="project-dialog__header">
-              <div class="project-dialog__head" data-project-dialog-head></div>
-            </div>
-            <div class="project-dialog__content">
-            <ul class="project-points">
-              <li>
-                <strong>Markenwebsite &amp; Mitgliederplattform:</strong> Die offizielle Markenwebsite und Mitgliederplattform mit Next.js 16 + Prisma + PostgreSQL aufgebaut — Produktpräsentation, Drittanbieter-E-Commerce-Verlinkung (Tmall / Douyin / Xiaohongshu / WeChat Shop + GA-Event-Tracking), Mitgliedsstufen, Punktejournal, Punkte-Einlösung (SF-Express-Tracking), manuelle Erfassung von Offline-Käufen, Hautprofile und ein Kontosicherheitszentrum; WeChat-, Douyin- und Telefon-OTP-Identitäten in einem einheitlichen Kontosystem zusammengeführt — 205 API-Routen, 51 Datenmodelle und 2.100+ automatisierte Testfälle (dieses System allein).
-              </li>
-              <li>
-                <strong>Produkt- &amp; Interaktionsdesign:</strong> Produktdesign eigenverantwortlich übernommen und PRD erstellt; Informationsarchitektur, Interaktion und UI/UX-Design eigenverantwortlich umgesetzt und direkt im Code realisiert. Mehrstufige Hautpflegeritual-Guides und immersives Marken-Storytelling mit Framer Motion + View Transitions umgesetzt, den Produkt-Drawer mit den Detailseiten verknüpft und vollständig responsive Layouts geliefert.
-              </li>
-              <li>
-                <strong>Admin-Konsole &amp; Sicherheits-Governance:</strong> Eine Admin-Konsole für Produkte / Kategorien / Mitglieder / Punkte-Einlösung / manuelle Erfassung von Offline-Käufen / Stellenanzeigen / Nachrichten / OAuth-Clients (Tiptap Rich Text) aufgebaut, mit TOTP-Zwei-Faktor-Authentifizierung und Step-up-Verifizierung für sensible Aktionen, Audit-Logs und täglichen Integritätsprüfungen, geplanten Jobs, datenbankgestütztem Rate-Limiting und Wiederholungsversuchen bei fehlgeschlagenen Webhooks; SEO / GEO (generative Engine-Optimierung; sitemap / JSON-LD / llms.txt / Baidu-Push) umgesetzt.
-              </li>
-            </ul>
-            </div>
-          </div>
-        </dialog>
-      </div>
-
-      <div class="project-entry" data-project-logo="/images/NIHPLOD-logo.svg" id="project-sso">
-        <div class="entry-header">
-          <h3 class="project-name"><button type="button" class="project-name-button" data-project-dialog="project-sso" aria-haspopup="dialog">NIHPLOD Plattform für einheitliche Authentifizierung (SSO / OIDC)</button></h3>
-          <span class="entry-date">Juli 2026 – heute</span>
-        </div>
-        <div class="project-meta">
-          <span class="project-meta-owner">Produkt, Full-Stack-Entwicklung, Deployment und Betrieb eigenverantwortlich geleitet</span>
-        </div>
-        <p class="project-summary">Die einheitliche Identitätsbasis für Greater China: ein selbst entwickeltes OAuth 2.0 / OIDC Single Sign-on für 5 Systeme — zwei WeChat-Mini-Programme, die offizielle Website (Nutzer- und Admin-Seite), die Hautanalyse-Subsite (Nutzer- und Admin-Seite) und die BA-Autorisierungsprüfungsplattform (Admin-Seite); es ermöglicht systemübergreifendes Login und globales Logout, die Admin-Konsolen sind durch TOTP-2FA geschützt – verpackt als wiederverwendbares npm-SDK.</p>
-        <button type="button" class="project-more" data-project-dialog="project-sso" aria-haspopup="dialog" aria-label="Details ansehen: NIHPLOD Plattform für einheitliche Authentifizierung (SSO / OIDC)"><svg class="project-more__icon" aria-hidden="true"><use href="#icon-file-text"></use></svg>Details ansehen</button>
-        <dialog class="project-dialog" id="dialog-project-sso">
-          <button type="button" class="project-dialog__close" data-project-dialog-close autofocus aria-label="Schließen">&times;</button>
-          <div class="project-dialog__panel">
-            <div class="project-dialog__header">
-              <div class="project-dialog__head" data-project-dialog-head></div>
-            </div>
-            <div class="project-dialog__content">
-            <ul class="project-points">
-              <li>
-                <strong>Protokoll-Implementierung:</strong> Self-hosted OAuth 2.0 / OIDC-SSO aufgebaut, auf derselben Domain wie die offizielle Hauptseite betrieben — die Hauptseite fungiert als Authorization Server und stellt RS256-JWTs aus; die Endpunkte authorize / token / userinfo / introspect / revoke / end-session vollständig implementiert, inkl. PKCE und DPoP; die Admin-Konsole ist durch TOTP-Zwei-Faktor-Authentifizierung geschützt.
-              </li>
-              <li>
-                <strong>SDK &amp; Integration:</strong> npm-SDKs (@nihplod/sso-sdk / @nihplod/sso-verify) verpackt und veröffentlicht, sodass Teilprojekte innerhalb von Minuten integriert werden können; mit Token Introspection + Backchannel Logout für systemübergreifendes SSO und globales Logout — einheitlicher Login für zwei WeChat-Mini-Programme, die offizielle Website (Nutzer- und Admin-Seite), die Hautanalyse-Subsite (Nutzer- und Admin-Seite) und die BA-Autorisierungsprüfungsplattform (Admin-Seite).
-              </li>
-              <li>
-                <strong>Sicherheits-Härtung:</strong> Unterstützt Secret-Rotation, Token-Widerruf (RFC 7009) und Multi-Instanz-Blacklist-Sharing für ein wartbares und auditierbares Authentifizierungssystem.
-              </li>
-            </ul>
-            </div>
-          </div>
-        </dialog>
-      </div>
-
-      <div class="project-entry" data-project-logo="/images/NIHPLOD-logo.svg" id="project-ai-advisor">
-        <div class="entry-header">
-          <h3 class="project-name"><button type="button" class="project-name-button" data-project-dialog="project-ai-advisor" aria-haspopup="dialog">KI-Hautpflegeberater</button></h3>
-          <span class="entry-date">Jan. 2026 – heute</span>
-        </div>
-        <div class="project-meta">
-          <span class="project-meta-owner">Produkt, Interaktion, Full-Stack-Entwicklung, Deployment und Betrieb eigenverantwortlich geleitet, UI-Visualdesign in Zusammenarbeit</span> <a href="https://smart.nihplod.cn" target="_blank" rel="noopener noreferrer" class="project-meta-link"><span>smart.nihplod.cn</span><svg class="project-meta-link__icon" aria-hidden="true"><use href="#icon-external"></use></svg></a>
-        </div>
-        <p class="project-summary">Ein KI-Hautpflegeberater für Verbraucher: zweikanalige Hautanalyse per Fragebogen + Gesichtsscan, personalisierte Produktempfehlungen nach Hauttyp, Jahreszeit und Region sowie Übergabe von Berichten und Profilen an WeCom-Berater – geschlossener Kreislauf von Analyse über Pflegeplan und Follow-up bis zum Wiederkauf; 93 API-Routen / 531 Tests.</p>
-        <button type="button" class="project-more" data-project-dialog="project-ai-advisor" aria-haspopup="dialog" aria-label="Details ansehen: KI-Hautpflegeberater"><svg class="project-more__icon" aria-hidden="true"><use href="#icon-file-text"></use></svg>Details ansehen</button>
-        <dialog class="project-dialog" id="dialog-project-ai-advisor">
-          <button type="button" class="project-dialog__close" data-project-dialog-close autofocus aria-label="Schließen">&times;</button>
-          <div class="project-dialog__panel">
-            <div class="project-dialog__header">
-              <div class="project-dialog__head" data-project-dialog-head></div>
-            </div>
-            <div class="project-dialog__content">
-            <ul class="project-points">
-              <li>
-                <strong>KI-Hautanalyse &amp; personalisierte Empfehlungen:</strong> Tongyi Qianwen VL / DeepSeek-LLMs für die zweikanalige Hautanalyse (Fragebogen + Gesichtsscan) integriert; eine eigene Regel-Engine bewertet Produkte anhand von 8 Hauttypen sowie saisonalen / regionalen Umweltfaktoren — über eine visuelle Admin-Konsole konfigurierbar, sodass das Betriebsteam ohne Programmieraufwand anpassen kann.
-              </li>
-              <li>
-                <strong>Conversion &amp; Attribution:</strong> Modellintegration und Entwicklung der Kern-APIs geleitet; E-Commerce-Ausgangslinks (Tmall / Douyin / Xiaohongshu / WeChat Shop) unterstützen UTM-/pid-Tracking und Click-Event-Instrumentierung und bilden zusammen mit WeCom-Berater-Kurzlinks einen attribuierbaren Beratungs-Conversion-Pfad.
-              </li>
-              <li>
-                <strong>Wachstum &amp; Mitgliederbetrieb:</strong> Vierstufige Hautanalyse-Kontingente für Mitglieder integriert (Standard: 10 lebenslange Sitzungen; Silber: Basis 10 + 20 pro ¥1.000 Umsatz; Gold / Diamant: unbegrenzt insgesamt; alle bezahlten Stufen: max. 10/Tag), Berichte und Profile an das angemeldete Konto gebunden; Teilen-Poster, Kanal-ref-Attribution und Registrierungs-Conversion-Popups gestaltet sowie anonymisierte aggregierte CSV-Statistiken für Marken-Whitepaper und Markt-Insights exportiert.
-              </li>
-              <li>
-                <strong>KI-Kosten- &amp; Zuverlässigkeits-Engineering:</strong> KI-Anfragewarteschlange mit Nebenläufigkeitskontrolle, Circuit Breaker, Tages-/Monatslimits für Tokens und Kosten, persistenter Abrechnung pro Aufruf sowie Modell-Whitelist mit Anbieter-Fallback entworfen; idempotente Wiederholungsversuche und Kontingent-Reservierung / -Freigabe verhindern Doppelbelastungen; Hautprofile haben eine rollierende 90-Tage-Gültigkeit mit Retest-Hinweisen, vollständige Berichte werden 365 Tage aufbewahrt, und die zweistufige Archivierung (heiß/kalt) behält die letzten 10 vollständigen Berichte sowie anonymisierte Cold-Tier-Zusammenfassungen für bis zu 3 Jahre.
-              </li>
-              <li>
-                <strong>Datenasset-Kreislauf:</strong> Eine Server-zu-Server-API mit HMAC-Signaturen + IP-Rate-Limiting entworfen; Hautanalyse-Berichte und Hautpflegeprofile werden per session_id an den WeCom-KI-Kundenservice übergeben — einmalige Hauttests werden so zu dauerhaft nutzbaren Datenassets, die Wiederholungskäufe fördern.
-              </li>
-            </ul>
-            </div>
-          </div>
-        </dialog>
-      </div>
-
-      <div class="project-extra" id="project-extra" hidden>
-      <div class="project-entry project-entry--static" id="project-wecom-ai">
-        <div class="entry-header">
-          <h3 class="project-name">WeCom-KI-Kundenservice</h3>
-          <span class="entry-date">Aug. 2026</span>
-        </div>
-        <div class="project-meta">
-          <span class="project-meta-owner">Produkt, Full-Stack-Entwicklung, Deployment und Betrieb eigenverantwortlich geleitet</span>
-          <a href="https://kf.nihplod.cn" target="_blank" rel="noopener noreferrer" class="project-meta-link"><span>kf.nihplod.cn</span><svg class="project-meta-link__icon" aria-hidden="true"><use href="#icon-external"></use></svg></a>
-        </div>
-        <p class="project-summary">WeCom-KI-Kundenservice mit FastAPI + Redis + DeepSeek: vereint drei Nachrichteneingänge (WeCom-Kundenservice, WeCom-App und WeChat Official Account), unterstützt intelligente Übergabe an Menschen, übernimmt Hautpflegeprofile und bietet 7×24-Begleitung; 44KB Marken-FAQ-Wissensbasis, 34 Golden-Regressionfälle, 340+ automatisierte Tests und PIPL-konforme Export-/Löschfunktionen für personenbezogene Daten.</p>
-      </div>
-
-      <div class="project-entry project-entry--static" id="project-authorization">
-        <div class="entry-header">
-          <h3 class="project-name">NIHPLOD Autorisierungs- und Verifizierungsplattform</h3>
-          <span class="entry-date">Apr. 2026 – Mai 2026</span>
-        </div>
-        <div class="project-meta">
-          <span class="project-meta-owner">Produkt, Design, Full-Stack-Entwicklung, Deployment und Betrieb eigenverantwortlich geleitet</span>
-          <a href="https://ba.nihplod.cn" target="_blank" rel="noopener noreferrer" class="project-meta-link"><span>ba.nihplod.cn</span><svg class="project-meta-link__icon" aria-hidden="true"><use href="#icon-external"></use></svg></a>
-        </div>
-        <p class="project-summary">Händlerautorisierungs- und Fälschungsschutzplattform mit Next.js 16 + PostgreSQL: zweistufiger Prüf-Workflow und Zertifikats-Zustandsmaschine, Canvas + jsPDF zur Echtzeit-Erzeugung von Autorisierungszertifikaten mit E-Siegel und dynamischem QR-Code; öffentliche Verifizierung mit dreistufigem Fallback-Matching und Kamera-QR-Scan, plus Fälschungsmelde-Tickets, JWT-Blacklisting und Audit-Logging.</p>
-      </div>
-
-      <div class="project-entry project-entry--static" id="project-skin-miniprogram">
-        <div class="entry-header">
-          <h3 class="project-name">Jizhipai KI-Hautanalyse-Mini-Programm</h3>
-          <span class="entry-date">Okt. 2026 – heute</span>
-        </div>
-        <div class="project-meta">
-          <span class="project-meta-owner">Produkt, Design, Mini-Programm-Entwicklung, Deployment und Betrieb eigenverantwortlich geleitet</span>
-        </div>
-        <p class="project-summary">WeChat-Mini-Programm-Version des Hautanalyse-Flows: 14 Seiten, mit WeChat VisionKit und 106 Keypoints für vierstufige Positivierungsführung (vorne / rechts / links / Kinn hoch) und automatische Aufnahme; asynchrone Analyse-Abfragen, Canvas-2D-Radar-Diagramm mit 10 Dimensionen und Hauttrendkurve, dynamisches Score-Poster und Retest-Abo-Nachrichten.</p>
-      </div>
-
-      <div class="project-entry project-entry--static" id="project-member-miniprogram">
-        <div class="entry-header">
-          <h3 class="project-name">NIHPLOD Mitgliedercenter-Mini-Programm</h3>
-          <span class="entry-date">Okt. 2026 – heute</span>
-        </div>
-        <div class="project-meta">
-          <span class="project-meta-owner">Produkt, Mini-Programm-Entwicklung, Deployment und Betrieb eigenverantwortlich geleitet</span>
-        </div>
-        <p class="project-summary">19-seitiges Mitgliedercenter-Mini-Programm in nativem TypeScript: WeChat-One-Click-Login, Mitgliedsstufen und Upgrade-Fortschritt, Punktestand und -verlauf, Geschenk-Einlösung (requestId-Idempotenz), Adressbuch, SF-Express-Tracking, manuelle Erfassung von Offline-Käufen, Sicherheitszentrum und Kontolöschung; direkte Anbindung an OAuth 2.0 und Business-APIs der offiziellen Website ohne eigenes Backend.</p>
-      </div>
-
-      <div class="project-entry project-entry--static" id="project-myskin">
-        <div class="entry-header">
-          <h3 class="project-name">Myskin.Today Markenwebsite</h3>
-          <span class="entry-date">Jan. 2026 – Feb. 2026</span>
-        </div>
-        <div class="project-meta">
-          <span class="project-meta-owner">Produkt, Design, Full-Stack-Entwicklung, AIGC-Visuals, Deployment und Betrieb eigenverantwortlich geleitet</span>
-          <a href="https://myskin.today" target="_blank" rel="noopener noreferrer" class="project-meta-link"><span>myskin.today</span><svg class="project-meta-link__icon" aria-hidden="true"><use href="#icon-external"></use></svg></a>
-        </div>
-        <p class="project-summary">B2B-Website der KI-Hautanalyseplattform mit Next.js 16 + Tailwind CSS v4: Produktpräsentation, drei Landingpages für Geschäftsmodelle (API-Integration / White-Label / strategische Partnerschaft) und API-Dokumentation; Partnerschaftsanfragen werden in Echtzeit an einen WeCom-Bot gesendet, ergänzt durch ein Marken-Designsystem, helles/dunkles Theme und AIGC-Visualassets.</p>
-      </div>
-      </div>
-
-      <div class="project-toggle-wrap">
-        <button type="button" class="project-toggle" data-project-toggle aria-expanded="false" aria-controls="project-extra">
-          <span class="project-toggle__more">Weitere Projekte anzeigen</span>
-          <span class="project-toggle__less">Weniger anzeigen</span>
-        </button>
-      </div>
-
-    </section>
+    <ProjectSection locale="de" projects={projectData.projects} ui={projectData.ui} />
 
     <section>
       <h2>Tech-Stack</h2>
@@ -476,7 +299,7 @@ const ld = {
         <span class="award-name">Mitglied der Google Developer Group (GDG)</span>
       </div>
       <div class="award-row">
-        <span class="award-name">Juror, Jugendstufenprüfung der Chinese Institute of Electronics (Python)</span>
+        <span class="award-name">Bewertungslehrer, Jugendstufenprüfung der Chinese Institute of Electronics (Python)</span>
       </div>
     </section>
   </div>

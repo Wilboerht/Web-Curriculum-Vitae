@@ -5,9 +5,21 @@ interface Props {
   title: string;
   lang: string;
   noindex?: boolean;
+  description?: string;
+  ogType?: string;
+  alternates?: Record<string, string>;
+  bodyClass?: string;
 }
 
-const { title, lang, noindex = false } = Astro.props;
+const {
+  title,
+  lang,
+  noindex = false,
+  description: descriptionOverride,
+  ogType = "profile",
+  alternates,
+  bodyClass,
+} = Astro.props;
 
 const baseFontStylesheets = ["/fonts/source-serif-4.css"];
 const cjkFontStylesheets = [
@@ -29,7 +41,7 @@ const desc: Record<string, string> = {
   "ja": "王泓坤 - 履歴書",
 };
 
-const description = desc[lang] || desc["en"];
+const description = descriptionOverride ?? desc[lang] ?? desc["en"];
 
 const langs = [
   { code: "zh-CN", label: "中", full: "中文", path: "/CV-cn/" },
@@ -165,7 +177,7 @@ const breadcrumbLd = {
     <meta property="og:site_name" content="Hongkun Wang · CV" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="profile" />
+    <meta property="og:type" content={ogType} />
     <meta property="profile:first_name" content="Hongkun" />
     <meta property="profile:last_name" content="Wang" />
     <meta property="og:url" content={canonical} />
@@ -190,10 +202,16 @@ const breadcrumbLd = {
     {!noindex && <link rel="canonical" href={canonical} />}
     {
       !noindex && langs.map((l) => (
-        <link rel="alternate" hreflang={l.code} href={`${SITE_URL}${l.path}`} />
+        <link
+          rel="alternate"
+          hreflang={l.code}
+          href={`${SITE_URL}${alternates?.[l.code] ?? l.path}`}
+        />
       ))
     }
-    {!noindex && <link rel="alternate" hreflang="x-default" href={`${SITE_URL}/CV-en/`} />}
+    {!noindex && (
+      <link rel="alternate" hreflang="x-default" href={`${SITE_URL}${alternates?.en ?? "/CV-en/"}`} />
+    )}
 
     <title>{title}</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -219,7 +237,7 @@ const breadcrumbLd = {
 
     <slot name="head" />
   </head>
-  <body>
+  <body class={bodyClass}>
     <a class="skip-link" href="#main-content">{skipLabels[lang] || skipLabels.en}</a>
 
     <nav class="cv-toolbar" aria-label={navLabels[lang] || navLabels.en}>
@@ -233,7 +251,7 @@ const breadcrumbLd = {
         >
           {
             langs.map((l) => (
-              <option value={l.path} selected={l.code === lang}>
+              <option value={alternates?.[l.code] ?? l.path} selected={l.code === lang}>
                 {l.full}
               </option>
             ))
@@ -243,7 +261,7 @@ const breadcrumbLd = {
       <noscript>
         <span class="cv-lang-fallback">
           {langs.map((l) => (
-            <a href={l.path} hreflang={l.code} lang={l.code}>{l.full}</a>
+            <a href={alternates?.[l.code] ?? l.path} hreflang={l.code} lang={l.code}>{l.full}</a>
           ))}
         </span>
       </noscript>
@@ -267,133 +285,9 @@ const breadcrumbLd = {
       <slot />
     </main>
 
-    <SiteFooter lang={lang} />
+    <SiteFooter lang={lang} alternates={alternates} />
 
     <script>
-      document.querySelectorAll(".project-entry").forEach((entry) => {
-        const triggers = entry.querySelectorAll("[data-project-dialog]");
-        if (!triggers.length) return;
-
-        const dialogId = triggers[0].getAttribute("data-project-dialog");
-        const dialog = document.getElementById(`dialog-${dialogId}`);
-        if (!dialog) return;
-
-        const head = dialog.querySelector("[data-project-dialog-head]");
-
-        const fill = () => {
-          if (!head || head.dataset.filled === "true") return;
-
-          const name = entry.querySelector(".project-name")?.textContent?.trim() ?? "";
-          const date = entry.querySelector(".entry-date")?.textContent?.trim() ?? "";
-          const meta = entry.querySelector(".project-meta");
-          const summary = entry.querySelector(".project-summary");
-          const content = dialog.querySelector(".project-dialog__content");
-          if (!content) return;
-
-          const title = document.createElement("h3");
-          title.className = "project-dialog__title";
-          title.id = `dialog-${dialogId}-title`;
-
-          const logoSrc = entry.getAttribute("data-project-logo");
-          const displayName = logoSrc
-            ? name.replace(/^NIHPLOD\s+/i, "") || name
-            : name;
-          title.textContent = displayName;
-
-          if (logoSrc) {
-            const logo = document.createElement("img");
-            logo.className = "project-dialog__logo";
-            logo.src = logoSrc;
-            logo.alt = "";
-            logo.decoding = "async";
-            logo.setAttribute("aria-hidden", "true");
-            head.append(logo);
-
-            const separator = document.createElement("span");
-            separator.className = "project-dialog__logo-separator";
-            separator.setAttribute("aria-hidden", "true");
-            head.append(separator);
-          }
-
-          head.append(title);
-
-          const metaEl = document.createElement("div");
-          metaEl.className = "project-meta project-dialog__meta";
-
-          const metaPrimary = document.createElement("div");
-          metaPrimary.className = "project-dialog__meta-primary";
-          const dateEl = document.createElement("span");
-          dateEl.className = "project-dialog__date";
-          dateEl.textContent = date;
-          metaPrimary.append(dateEl);
-          metaEl.append(metaPrimary);
-
-          if (meta) {
-            const owner = meta.querySelector(".project-meta-owner");
-            if (owner) {
-              const ownerEl = document.createElement("span");
-              ownerEl.className = "project-dialog__owner";
-              ownerEl.textContent = owner.textContent.trim();
-              metaPrimary.append(ownerEl);
-            }
-
-            const tags = Array.from(meta.querySelectorAll(".project-meta-tag"));
-            if (tags.length) {
-              const tagsEl = document.createElement("span");
-              tagsEl.className = "project-dialog__tags";
-              tags.forEach((tag) => tagsEl.append(tag.cloneNode(true)));
-              metaEl.append(tagsEl);
-            }
-
-            const link = meta.querySelector(".project-meta-link");
-            if (link) metaEl.append(link.cloneNode(true));
-          }
-
-          const intro = document.createElement("div");
-          intro.className = "project-dialog__intro";
-          intro.append(metaEl);
-          if (summary) {
-            const summaryEl = document.createElement("p");
-            summaryEl.className = "project-dialog__summary";
-            summaryEl.textContent = summary.textContent.trim();
-            intro.append(summaryEl);
-          }
-          content.prepend(intro);
-
-          dialog.setAttribute("aria-labelledby", title.id);
-          head.dataset.filled = "true";
-        };
-
-        const open = () => {
-          fill();
-          if (!dialog.open) dialog.showModal();
-          document.body.classList.add("project-modal-open");
-        };
-
-        triggers.forEach((trigger) => {
-          trigger.addEventListener("click", (event) => {
-            event.preventDefault();
-            open();
-          });
-        });
-
-        entry.addEventListener("click", (event) => {
-          if (event.target.closest("a, button, dialog")) return;
-          if (window.getSelection()?.toString()) return;
-          open();
-        });
-
-        dialog.querySelector(".project-dialog__close")?.addEventListener("click", () => dialog.close());
-
-        dialog.addEventListener("click", (event) => {
-          if (event.target === dialog) dialog.close();
-        });
-
-        dialog.addEventListener("close", () => {
-          document.body.classList.remove("project-modal-open");
-        });
-      });
-
       document.querySelectorAll("[data-project-toggle]").forEach((button) => {
         const targetId = button.getAttribute("aria-controls");
         const target = targetId ? document.getElementById(targetId) : null;

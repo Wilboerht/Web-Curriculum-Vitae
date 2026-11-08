@@ -1,0 +1,116 @@
+---
+import type { Project, ProjectUi } from "../data/projects";
+import { getLocaleByCode } from "../data/locales";
+
+interface Props {
+  locale: string;
+  projects: Project[];
+  ui: ProjectUi;
+}
+
+const { locale, projects, ui } = Astro.props;
+const localeInfo = getLocaleByCode(locale);
+const hrefFor = (slug: string) => `${localeInfo.path}projects/${slug}/`;
+
+const featured = projects.filter((project) => project.details?.length);
+const extra = projects.filter((project) => !project.details?.length);
+---
+
+<section>
+  <div class="project-section-head">
+    <h2>{ui.sectionTitle}</h2>
+    <a
+      class="project-github-link"
+      href="https://github.com/Wilboerht"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={ui.githubAria}
+    >
+      <svg class="project-github-link__icon" aria-hidden="true"><use href="#icon-github"></use></svg>
+      {ui.githubLabel}
+    </a>
+  </div>
+
+  {
+    featured.map((project) => (
+      <div class="project-entry" id={project.id}>
+        <div class="entry-header">
+          <h3 class="project-name">
+            <a class="project-name-link" href={hrefFor(project.slug)}>{project.name}</a>
+          </h3>
+          <span class="entry-date">{project.date}</span>
+        </div>
+        <div class="project-meta">
+          <span class="project-meta-owner">{project.owner}</span>
+          {project.link && (
+            <a
+              href={project.link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-meta-link"
+            >
+              <span>{project.link.label}</span>
+              <svg class="project-meta-link__icon" aria-hidden="true"><use href="#icon-external"></use></svg>
+            </a>
+          )}
+        </div>
+        <p class="project-summary">{project.summary}</p>
+        <a
+          class="project-more"
+          href={hrefFor(project.slug)}
+          aria-label={`${ui.detailsAriaPrefix}${project.name}`}
+        >
+          <svg class="project-more__icon" aria-hidden="true"><use href="#icon-file-text"></use></svg>
+          {ui.detailsLabel}
+        </a>
+      </div>
+    ))
+  }
+
+  {
+    extra.length > 0 && (
+      <div class="project-extra" id="project-extra" hidden>
+        {extra.map((project) => (
+          <div class="project-entry" id={project.id}>
+            <div class="entry-header">
+              <h3 class="project-name">{project.name}</h3>
+              <span class="entry-date">{project.date}</span>
+            </div>
+            <div class="project-meta">
+              <span class="project-meta-owner">{project.owner}</span>
+              {project.link && (
+                <a
+                  href={project.link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-meta-link"
+                >
+                  <span>{project.link.label}</span>
+                  <svg class="project-meta-link__icon" aria-hidden="true"><use href="#icon-external"></use></svg>
+                </a>
+              )}
+            </div>
+            <p class="project-summary">{project.summary}</p>
+          </div>
+        ))}
+      </div>
+    )
+  }
+
+  {
+    extra.length > 0 && (
+      <div class="project-toggle-wrap">
+        <button
+          type="button"
+          class="project-toggle"
+          data-project-toggle
+          aria-expanded="false"
+          aria-controls="project-extra"
+        >
+          <span class="project-toggle__more">{ui.moreLabel}</span>
+          <span class="project-toggle__less">{ui.lessLabel}</span>
+        </button>
+      </div>
+    )
+  }
+</section>
