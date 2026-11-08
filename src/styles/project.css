@@ -271,10 +271,15 @@
 
 .blog-facts {
   width: 100%;
-  border-collapse: collapse;
+  border: 1px solid var(--blog-border);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  background: #f7f7f4;
   color: var(--blog-body);
   font-size: var(--cv-fs-copy);
   line-height: var(--cv-lh-copy);
+  overflow: hidden;
 }
 
 .blog-facts caption {
@@ -289,10 +294,15 @@
 
 .blog-facts th,
 .blog-facts td {
-  padding: 0.5rem 0.75rem;
+  padding: 0.65rem 1rem;
   border-bottom: 1px solid var(--blog-rule);
   text-align: left;
   vertical-align: top;
+}
+
+.blog-facts tr:last-child th,
+.blog-facts tr:last-child td {
+  border-bottom: 0;
 }
 
 .blog-facts th {
@@ -307,7 +317,7 @@
 
 .blog-facts th:first-child,
 .blog-facts td:first-child {
-  padding-left: 0;
+  padding-left: 1rem;
 }
 
 /* Right headings column */
@@ -347,10 +357,17 @@
   color: var(--blog-muted);
   font-size: 0.8125rem;
   line-height: 1.5;
-  transition: color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .blog-toc li a:hover {
+  color: var(--blog-fg);
+}
+
+.blog-toc li a[aria-current="location"] {
+  border-left-color: var(--blog-accent);
   color: var(--blog-fg);
 }
 
@@ -431,12 +448,12 @@
 
   .blog-facts th,
   .blog-facts td {
-    padding: 0.5rem;
+    padding: 0.5rem 0.75rem;
   }
 
   .blog-facts th:first-child,
   .blog-facts td:first-child {
-    padding-left: 0;
+    padding-left: 0.75rem;
   }
 
   .blog-pagefooter__inner {
