@@ -45,7 +45,7 @@ export const projects: Project[] = [
       },
       {
         title: "관리자 콘솔 & 보안 거버넌스:",
-        body: "상품 / 카테고리 / 회원 / 포인트 교환 / 오프라인 구매 내역 수동 등록 / 채용 공고 / 메시지 / OAuth 클라이언트를 아우르는 관리자 콘솔(Tiptap 리치 텍스트) 구축, TOTP 2단계 인증과 민감 작업 재인증(Step-up), 감사 로그와 일일 무결성 검증 기준점, 예약 작업, 데이터베이스 기반 레이트 리미팅, 웹훅 실패 재시도; SEO / GEO(생성형 엔진 최적화; sitemap / JSON-LD / llms.txt / 바이두 푸시) 구현.",
+        body: "상품 / 카테고리 / 회원 / 포인트 교환 / 오프라인 구매 내역 수동 등록 / 채용 공고 / 메시지 / OAuth 클라이언트를 아우르는 관리자 콘솔(Tiptap 리치 텍스트) 구축, TOTP 2단계 인증과 민감 작업 재인증(Step-up), 감사 로그와 일일 무결성 검증 기준점, 예약 작업, 데이터베이스 기반 레이트 리미팅, 웹훅 실패 재시도; SEO / GEO / AEO(생성형·답변 엔진 최적화; 동적 sitemap, AI 크롤러 허용 목록 및 Content-Signal, Organization / Product / FAQ / HowTo JSON-LD, llms.txt / llms-full.txt, 제품별 GEO FAQ(최대 20개, 관리자 편집 가능 + 규칙 기반 폴백), Baidu 푸시 / IndexNow) 구현.",
       },
     ],
   },
@@ -105,6 +105,10 @@ export const projects: Project[] = [
       {
         title: "데이터 자산 선순환:",
         body: "HMAC 서명 + IP 레이트 리미팅 서버 간 API 설계, 피부 측정 리포트와 스킨케어 프로필을 session_id로 위챗워크 AI 고객서비스에 전달, 일회성 측정을 지속 운영 가능하고 재구매를 이끄는 사용자 데이터 자산으로 전환.",
+      },
+      {
+        title: "검색 및 AI 발견 가능성(SEO / GEO / AEO):",
+        body: "독립 피부 측정 사이트에 Organization / WebApplication / FAQPage / Breadcrumb JSON-LD, AI 크롤러 허용 목록, sitemap, llms.txt / llms-full.txt, FAQ 10개 답변을 구성하고 Google / Baidu 사이트 인증 완료.",
       },
     ],
   },

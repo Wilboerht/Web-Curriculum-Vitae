@@ -45,7 +45,7 @@ export const projects: Project[] = [
       },
       {
         title: "Admin Console & Security Governance:",
-        body: "Built an admin console covering products / categories / members / points redemption / manual purchase record entry / job postings / messages / OAuth clients (Tiptap rich text), with TOTP two-factor authentication and step-up verification for sensitive actions, operation audit logs and daily integrity checkpoints, scheduled jobs, database-persisted rate limiting, and webhook failure retries; implemented SEO / GEO (generative engine optimization; sitemap / JSON-LD / llms.txt / Baidu push).",
+        body: "Built an admin console covering products / categories / members / points redemption / manual purchase record entry / job postings / messages / OAuth clients (Tiptap rich text), with TOTP two-factor authentication and step-up verification for sensitive actions, operation audit logs and daily integrity checkpoints, scheduled jobs, database-persisted rate limiting, and webhook failure retries; implemented SEO / GEO / AEO (generative & answer engine optimization; dynamic sitemap, AI crawler allowlist & Content-Signal, Organization / Product / FAQ / HowTo JSON-LD, llms.txt / llms-full.txt, product-level GEO FAQs (up to 20, admin-editable with rule-based fallback), Baidu push & IndexNow).",
       },
     ],
   },
@@ -105,6 +105,10 @@ export const projects: Project[] = [
       {
         title: "Data Asset Loop:",
         body: "Designed a server-to-server API with HMAC signatures + IP rate limiting; skin-analysis reports and skincare profiles are passed to WeCom AI customer service via session_id, turning one-off skin tests into user data assets that support ongoing engagement and repeat purchases.",
+      },
+      {
+        title: "Search & AI Discoverability (SEO / GEO / AEO):",
+        body: "Configured Organization / WebApplication / FAQPage / Breadcrumb JSON-LD, AI crawler allowlist, sitemap, llms.txt / llms-full.txt, and 10 FAQ answers for the standalone skin-analysis site, with Google / Baidu site verification.",
       },
     ],
   },

@@ -45,7 +45,7 @@ export const projects: Project[] = [
       },
       {
         title: "管理画面・セキュリティガバナンス：",
-        body: "商品・カテゴリー・会員・ポイント交換・購入履歴の後付け登録・求人情報・メッセージ・OAuthクライアント（Tiptapリッチテキスト）を管理する管理画面を構築。TOTP二要素認証、重要操作の再認証、操作監査ログと日次整合性チェックポイント、定期ジョブ、データベースに永続化するレート制限、Webhook失敗時リトライを実装。SEO / GEO（生成エンジン最適化；sitemap / JSON-LD / llms.txt / 百度プッシュ）に対応。",
+        body: "商品・カテゴリー・会員・ポイント交換・購入履歴の後付け登録・求人情報・メッセージ・OAuthクライアント（Tiptapリッチテキスト）を管理する管理画面を構築。TOTP二要素認証、重要操作の再認証、操作監査ログと日次整合性チェックポイント、定期ジョブ、データベースに永続化するレート制限、Webhook失敗時リトライを実装。SEO / GEO / AEO（生成エンジン・回答エンジン最適化；動的 sitemap、AI クローラー許可リストと Content-Signal、Organization / Product / FAQ / HowTo の JSON-LD、llms.txt / llms-full.txt、製品別 GEO FAQ（最大20件、管理画面で編集可能・ルールベースのフォールバック付き）、Baidu プッシュ / IndexNow）に対応。",
       },
     ],
   },
@@ -105,6 +105,10 @@ export const projects: Project[] = [
       {
         title: "データ資産の循環：",
         body: "HMAC署名とIPレート制限を備えたサーバー間APIを設計。肌診断レポートとスキンケアプロフィールをsession_id経由でWeCom AIカスタマーサービスに連携し、単発の肌診断を継続的に運用可能なリピート購入につながるデータ資産へ転換。",
+      },
+      {
+        title: "検索・AI 可発見性（SEO / GEO / AEO）：",
+        body: "独立した肌診断サイト向けに Organization / WebApplication / FAQPage / Breadcrumb JSON-LD、AI クローラー許可リスト、sitemap、llms.txt / llms-full.txt、10 件の FAQ 回答を整備し、Google / Baidu のサイト認証を完了。",
       },
     ],
   },

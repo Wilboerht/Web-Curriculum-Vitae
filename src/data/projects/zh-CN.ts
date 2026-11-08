@@ -45,7 +45,7 @@ export const projects: Project[] = [
       },
       {
         title: "管理后台与安全治理：",
-        body: "搭建覆盖产品 / 分类 / 会员 / 积分兑礼 / 线下消费补录 / 招聘职位 / 消息 / OAuth 客户端的管理后台（Tiptap 富文本），配套 TOTP 双因素认证（2FA）与敏感操作二次验证（Step-up）、操作审计与每日完整性校验锚点、定时任务、基于数据库的持久化限流及 Webhook 失败重试；实现 SEO / GEO（生成式引擎优化；sitemap / JSON-LD / llms.txt / 百度推送）。",
+        body: "搭建覆盖产品 / 分类 / 会员 / 积分兑礼 / 线下消费补录 / 招聘职位 / 消息 / OAuth 客户端的管理后台（Tiptap 富文本），配套 TOTP 双因素认证（2FA）与敏感操作二次验证（Step-up）、操作审计与每日完整性校验锚点、定时任务、基于数据库的持久化限流及 Webhook 失败重试；实现 SEO / GEO / AEO（生成式与答案引擎优化；动态 sitemap、AI 爬虫白名单与 Content-Signal、Organization / Product / FAQ / HowTo JSON-LD、llms.txt / llms-full.txt、产品级 GEO FAQ（最多 20 组，后台可编辑 + 规则兜底）、百度推送与 IndexNow）。",
       },
     ],
   },
@@ -105,6 +105,10 @@ export const projects: Project[] = [
       {
         title: "数据资产闭环：",
         body: "设计 HMAC 签名 + IP 限流的服务端到服务端（S2S）接口，测肤报告与护肤档案通过 session_id 同步至企业微信（企微）AI 客服，将一次性测肤转化为可持续运营、可驱动复购的用户数据资产。",
+      },
+      {
+        title: "搜索与 AI 可发现性（SEO / GEO / AEO）：",
+        body: "为独立测肤站配置 Organization / WebApplication / FAQPage / Breadcrumb JSON-LD、AI 爬虫白名单、sitemap、llms.txt / llms-full.txt 与 10 组 FAQ 答案内容，并完成 Google / 百度站点验证。",
       },
     ],
   },

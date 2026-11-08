@@ -45,7 +45,7 @@ export const projects: Project[] = [
       },
       {
         title: "管理後台與安全治理：",
-        body: "搭建覆蓋產品 / 分類 / 會員 / 積分兌禮 / 線下消費補錄 / 招聘職位 / 訊息 / OAuth 客戶端的管理後台（Tiptap 富文字），配套 TOTP 雙因素認證（2FA）與敏感操作二次驗證（Step-up）、操作稽核與每日完整性校驗錨點、定時任務、基於資料庫的持久化限流及 Webhook 失敗重試；實現 SEO / GEO（生成式引擎優化；sitemap / JSON-LD / llms.txt / 百度推送）。",
+        body: "搭建覆蓋產品 / 分類 / 會員 / 積分兌禮 / 線下消費補錄 / 招聘職位 / 訊息 / OAuth 客戶端的管理後台（Tiptap 富文字），配套 TOTP 雙因素認證（2FA）與敏感操作二次驗證（Step-up）、操作稽核與每日完整性校驗錨點、定時任務、基於資料庫的持久化限流及 Webhook 失敗重試；實現 SEO / GEO / AEO（生成式與答案引擎優化；動態 sitemap、AI 爬蟲白名單與 Content-Signal、Organization / Product / FAQ / HowTo JSON-LD、llms.txt / llms-full.txt、產品級 GEO FAQ（最多 20 組，後台可編輯 + 規則兜底）、百度推送與 IndexNow）。",
       },
     ],
   },
@@ -105,6 +105,10 @@ export const projects: Project[] = [
       {
         title: "資料資產閉環：",
         body: "設計 HMAC 簽名 + IP 限流的伺服器端到伺服器端（S2S）介面，測膚報告與護膚檔案透過 session_id 同步至企業微信（企微）AI 客服，將一次性測膚轉化為可持續營運、可驅動回購的使用者資料資產。",
+      },
+      {
+        title: "搜尋與 AI 可發現性（SEO / GEO / AEO）：",
+        body: "為獨立測膚站配置 Organization / WebApplication / FAQPage / Breadcrumb JSON-LD、AI 爬蟲白名單、sitemap、llms.txt / llms-full.txt 與 10 組 FAQ 答案內容，並完成 Google / 百度站點驗證。",
       },
     ],
   },

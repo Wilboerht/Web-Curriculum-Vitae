@@ -17,11 +17,11 @@
 - X: https://x.com/wilboerht
 - LinkedIn: https://www.linkedin.com/in/wilboerht/
 
-Summary: Digital Development Manager and full-stack engineer specializing in TypeScript / React / Next.js / AI / RAG. First engineer of Moidas' Greater China division — built the brand's entire Greater China information systems and digital infrastructure from the ground up, independently delivering 7 core systems within 12 months with 2,900+ automated test cases, and connected the business loop of "skin analysis → personalized regimen → 7×24 AI advisor follow-up → repurchase" through unified accounts and profile data.
+Summary: Digital Development Manager and full-stack engineer specializing in TypeScript / React / Next.js / AI / RAG. First engineer of Moidas' Greater China division — built the brand's entire Greater China information systems and digital infrastructure from the ground up, independently delivering 7 core systems within 12 months with 2,900+ automated test cases, and connected the business loop of "skin analysis → personalized regimen → 7×24 AI advisor follow-up → repurchase" through unified accounts and profile data. Also built the SEO / GEO / AEO search and AI discoverability layer across the brand website and AI skin-analysis site.
 
 ## 中文摘要
 
-王泓坤，常驻上海的数字开发经理、全栈工程师，专注 TypeScript / React / Next.js 与 AI / RAG。作为 Moidas（NIHPLOD）大中华区首位工程师，12 个月内从 0 到 1 交付 7 个核心系统、2,100+ 自动化测试，覆盖品牌官网、会员积分、统一认证（SSO）、AI 护肤顾问、企微 AI 客服、授权核验平台与两个小程序。
+王泓坤，常驻上海的数字开发经理、全栈工程师，专注 TypeScript / React / Next.js 与 AI / RAG。作为 Moidas（NIHPLOD）大中华区首位工程师，12 个月内从 0 到 1 交付 7 个核心系统、2,900+ 自动化测试，覆盖品牌官网、会员积分、统一认证（SSO）、AI 护肤顾问、企微 AI 客服、授权核验平台与两个小程序，并构建 SEO / GEO / AEO 搜索与 AI 可发现性体系。
 
 ## Experience
 
@@ -33,6 +33,7 @@ Joined as a full-time intern in Oct 2025 while completing studies and transition
 - Contributed to defining the Greater China membership system with brand and operations teams — four membership tiers, benefits, points and redemption rules — and delivered it across the official website and mini-program member center to support retention and repurchase.
 - Established AI-assisted development workflows and design standards, reducing average delivery cycles by over 50% while ensuring parallel multi-project delivery.
 - As technical lead, took in requirements from product and marketing teams and broke them down into schedules, owning requirement reviews and iteration cadence, supporting the brand's online retail channel (official China website) from 0 to launch.
+- Built the search and AI discoverability stack for the brand website and AI skin-analysis site (SEO / GEO / AEO): dynamic sitemap, AI crawler policy, Organization / Product / FAQ / HowTo JSON-LD, llms.txt / llms-full.txt, admin-maintainable product-level GEO FAQs, and Baidu / IndexNow push.
 - Led ICP filing, privacy policy and user agreement drafting, and data compliance review to ensure compliant launches across systems; dynamically adjusted server resources based on traffic to optimize costs.
 
 ### Shanghai Lingang Jinghong Security Technology Development Co., Ltd. — R&D Intern (Jul 2025 – Sep 2025)
@@ -49,7 +50,7 @@ Live: https://nihplod.cn · Independently delivered (product design · UI/UX · 
 
 - Brand Website & Member Platform: Built the brand's official website and member platform with Next.js 16 + Prisma + PostgreSQL — product showcases, third-party e-commerce referral (Tmall / Douyin / Xiaohongshu / WeChat Shop links + GA event tracking), membership tiers, points ledger, points redemption (SF Express tracking), manual purchase record entry for offline purchases, skin profiles, and an account security center; consolidated WeChat, Douyin, and phone OTP identities into a unified account system — 205 API routes, 51 data models, and 2,100+ automated test cases (this system alone; 2,900+ across the portfolio).
 - Product & Interaction Design: Owned product design and authored the PRD independently; completed the information architecture, interaction, and UI/UX design independently and implemented directly in code. Built multi-step skincare ritual guides and immersive brand storytelling with Framer Motion + View Transitions, integrated the product drawer with detail pages, and delivered fully responsive layouts.
-- Admin Console & Security Governance: Built an admin console covering products / categories / members / points redemption / manual purchase record entry / job postings / messages / OAuth clients (Tiptap rich text), with TOTP two-factor authentication and step-up verification for sensitive actions, operation audit logs and daily integrity checkpoints, scheduled jobs, database-persisted rate limiting, and webhook failure retries; implemented SEO / GEO (generative engine optimization; sitemap / JSON-LD / llms.txt / Baidu push).
+- Admin Console & Security Governance: Built an admin console covering products / categories / members / points redemption / manual purchase record entry / job postings / messages / OAuth clients (Tiptap rich text), with TOTP two-factor authentication and step-up verification for sensitive actions, operation audit logs and daily integrity checkpoints, scheduled jobs, database-persisted rate limiting, and webhook failure retries; implemented SEO / GEO / AEO (generative & answer engine optimization; dynamic sitemap, AI crawler allowlist & Content-Signal, Organization / Product / FAQ / HowTo JSON-LD, llms.txt / llms-full.txt, product-level GEO FAQs (up to 20, admin-editable with rule-based fallback), Baidu push & IndexNow).
 
 ### NIHPLOD Unified Authentication Platform (SSO / OIDC) — Jul 2026 – Present (iterating)
 
@@ -68,6 +69,7 @@ Live: https://smart.nihplod.cn · Responsible for product design · UX interacti
 - Growth & Membership Operations: Integrated four-tier member skin-analysis quotas (Standard: 10 lifetime sessions; Silver: base 10 + 20 per ¥1,000 spent; Gold / Diamond: unlimited total; all paid tiers: max 10/day), with reports and profiles tied to the logged-in account; designed share posters, channel ref attribution, and registration-conversion popups, and exported desensitized aggregate CSV statistics to inform the brand whitepaper and market insights.
 - AI Cost & Reliability Engineering: Designed an AI request queue with concurrency control, circuit breakers, daily / monthly token and cost budget caps, persisted per-call billing, and a model whitelist with provider fallback; used idempotent retries and quota reservation / release to prevent duplicate charges; skin profiles have a rolling 90-day validity with retest prompts, full reports are retained for 365 days, and hot / cold tiered storage keeps the latest 10 full reports plus desensitized cold-tier summaries for up to 3 years.
 - Data Asset Loop: Designed a server-to-server API with HMAC signatures + IP rate limiting; skin-analysis reports and skincare profiles are passed to WeCom AI customer service via session_id, turning one-off skin tests into user data assets that support ongoing engagement and repeat purchases.
+- Search & AI Discoverability: Configured Organization / WebApplication / FAQPage / Breadcrumb JSON-LD, AI crawler allowlist, sitemap, llms.txt / llms-full.txt, and 10 FAQ answers for the standalone skin-analysis site, with Google / Baidu site verification.
 
 ### WeChat AI Customer Service — Aug 2026
 
@@ -121,6 +123,7 @@ Live: https://www.lingangjh.com · Independently delivered (product design · UI
 - Frontend: TypeScript / React / Next.js / Vue 3 / uni-app / WeChat Mini Program (native / TypeScript) / Tailwind CSS / Canvas 2D / Responsive & Mobile Adaptation
 - Backend & DB: Node.js / Python (FastAPI) / Prisma / PostgreSQL / Redis / RESTful API / JWT · OAuth 2.0 · OIDC
 - AI & LLM: LLM Integration / Vision-Model Skin Analysis / RAG / AI Cost Engineering (Circuit Breakers & Budget Control) / Claude Code / Codex-Driven Development
+- Search & AI Discoverability: SEO / GEO / AEO / JSON-LD Structured Data / Dynamic Sitemap / AI Crawler Policy / llms.txt / llms-full.txt / Baidu Push / IndexNow
 - DevOps & Deploy: Linux / Docker / Nginx / CDN / ICP Filing / Cost Control & Resource Optimization
 - Security & Compliance: CSP / RLS / Information Security Baseline / Privacy & Data Compliance
 - Product & UI/UX: Product Design (PRD) / UI/UX Design / Interaction Design / Design Review / Design-to-Code
@@ -148,7 +151,7 @@ School of Communication & Electronic Engineering, Information Security Technolog
 ## Others
 
 - Google Developer Group Community Member
-- Chinese Institute of Electronics Youth Level Examination Assessor (Python)
+- Chinese Institute of Electronics Youth Level Examination Assessment Teacher (Python)
 
 ## Multilingual CV pages
 
