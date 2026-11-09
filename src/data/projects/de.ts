@@ -93,7 +93,7 @@ export const projects: Project[] = [
     details: [
       {
         title: "KI-Hautanalyse & personalisierte Empfehlungen:",
-        body: "Tongyi Qianwen VL / DeepSeek-LLMs für die zweikanalige Hautanalyse (Fragebogen + Gesichtsscan) integriert; eine eigene Regel-Engine bewertet Produkte anhand von 8 Hauttypen sowie saisonalen / regionalen Umweltfaktoren — über eine visuelle Admin-Konsole konfigurierbar, sodass das Betriebsteam ohne Programmieraufwand anpassen kann.",
+        body: "Qwen VL / DeepSeek-LLMs für die zweikanalige Hautanalyse (Fragebogen + Gesichtsscan) integriert; eine eigene Regel-Engine bewertet Produkte anhand von 8 Hauttypen sowie saisonalen / regionalen Umweltfaktoren — über eine visuelle Admin-Konsole konfigurierbar, sodass das Betriebsteam ohne Programmieraufwand anpassen kann.",
       },
       {
         title: "Conversion & Attribution:",

@@ -93,7 +93,7 @@ export const projects: Project[] = [
     details: [
       {
         title: "AI Skin Analysis & Personalized Recommendations:",
-        body: "Integrated Tongyi Qianwen VL / DeepSeek LLMs for dual-channel (questionnaire + facial scan) skin analysis; a custom rule engine scores and matches products against 8 skin types plus seasonal / regional environmental factors, configurable through a visual admin console so operations teams can adjust without code.",
+        body: "Integrated Qwen VL / DeepSeek LLMs for dual-channel (questionnaire + facial scan) skin analysis; a custom rule engine scores and matches products against 8 skin types plus seasonal / regional environmental factors, configurable through a visual admin console so operations teams can adjust without code.",
       },
       {
         title: "Conversion & Attribution:",
