@@ -34,11 +34,11 @@ export const projects: Project[] = [
     logo: "/images/NIHPLOD-logo.svg",
     link: { href: "https://nihplod.cn", label: "nihplod.cn" },
     summary:
-      "Brand website and membership platform for the China market: integrates product discovery, e-commerce referral, member points and skin profiles into one experience, unifies WeChat / Douyin / phone-number identities, and supports the brand's online retail launch and repeat purchases; 205 API routes / 51 models / 2,100+ tests (this system alone).",
+      "Brand website and membership platform for the China market: integrates product discovery, e-commerce referral, member points and skin profiles into one experience, unifies WeChat / Douyin / phone-number identities, and supports the brand's online retail launch and repeat purchases; 274 API routes / 60 models / 2,700+ tests (this system alone).",
     details: [
       {
         title: "Brand Website & Member Platform:",
-        body: "Built the brand's official website and member platform with Next.js 16 + Prisma + PostgreSQL — product showcases, third-party e-commerce referral (Tmall / Douyin / Xiaohongshu / WeChat Shop links + GA event tracking), membership tiers, points ledger, points redemption (SF Express tracking), manual purchase record entry for offline purchases, skin profiles, and an account security center; consolidated WeChat, Douyin, and phone OTP identities into a unified account system — 205 API routes, 51 data models, and 2,100+ automated test cases (this system alone).",
+        body: "Built the brand's official website and member platform with Next.js 16 + Prisma + PostgreSQL — product showcases, third-party e-commerce referral (Tmall / Douyin / Xiaohongshu / WeChat Shop links + GA event tracking), membership tiers, points ledger, points redemption (SF Express tracking), manual purchase record entry for offline purchases, skin profiles, and an account security center; consolidated WeChat, Douyin, and phone OTP identities into a unified account system — 274 API routes, 60 data models, and 2,700+ automated test cases (this system alone).",
       },
       {
         title: "Product & Interaction Design:",
@@ -89,11 +89,11 @@ export const projects: Project[] = [
     logo: "/images/NIHPLOD-logo.svg",
     link: { href: "https://smart.nihplod.cn", label: "smart.nihplod.cn" },
     summary:
-      "AI skincare advisor for consumers: dual-channel skin analysis via questionnaire + face scan, personalized product recommendations based on skin type, season and region, with reports and profiles passed to WeCom advisors — closing the loop from analysis to regimen, follow-up and repurchase; 93 API routes / 531 tests.",
+      "AI skincare advisor for consumers: dual-channel skin analysis via questionnaire + face scan, personalized product recommendations based on skin type, season and region, with reports and profiles passed to WeCom advisors — closing the loop from analysis to regimen, follow-up and repurchase; 100 API routes / 616 tests.",
     details: [
       {
         title: "AI Skin Analysis & Personalized Recommendations:",
-        body: "Integrated Qwen VL / DeepSeek LLMs for dual-channel (questionnaire + facial scan) skin analysis; a custom rule engine scores and matches products against 8 skin types plus seasonal / regional environmental factors, configurable through a visual admin console so operations teams can adjust without code.",
+        body: "Integrated Qwen VL / DeepSeek LLMs for dual-channel (questionnaire + facial scan) skin analysis; a custom rule engine scores and matches products against 7 skin types plus seasonal / regional environmental factors, configurable through a visual admin console so operations teams can adjust without code.",
       },
       {
         title: "Conversion & Attribution:",
@@ -125,13 +125,13 @@ export const projects: Project[] = [
     owner: "Independently led product, full-stack development, deployment, and operations",
     link: { href: "https://kf.nihplod.cn", label: "kf.nihplod.cn" },
     summary:
-      "WeCom AI customer service built with FastAPI + Redis + DeepSeek: unifies three message entry points (WeCom customer service, WeCom app, and WeChat Official Account), supports smart human handoff, inherits skincare profiles, and provides 7×24 companion-style follow-up; 44KB brand FAQ knowledge base, 34 golden regression cases, 340+ automated tests, and PIPL-compliant PII export/deletion.",
+      "WeCom AI customer service built with FastAPI + Redis + DeepSeek, centered on WeCom customer service as the primary entry point with WeCom app / WeChat Official Account callbacks also integrated: supports smart human handoff, inherits skincare profiles, and provides 7×24 AI responses; 44KB brand FAQ knowledge base, 49 golden regression cases, 370+ automated tests, and PIPL-compliant PII export/deletion.",
   },
   {
     slug: "authorization-verification",
     id: "project-authorization",
     name: "NIHPLOD Authorization & Verification Platform",
-    date: "Apr 2026 – May 2026",
+    date: "Apr 2026 – Present",
     owner: "Independently led product, design, full-stack development, deployment, and operations",
     link: { href: "https://ba.nihplod.cn", label: "ba.nihplod.cn" },
     summary:
@@ -144,7 +144,7 @@ export const projects: Project[] = [
     date: "Oct 2026 – Present",
     owner: "Independently led product, design, mini-program development, deployment, and operations",
     summary:
-      "WeChat mini-program version of the skin-analysis flow: 14 pages, with WeChat VisionKit and 106 keypoints for four-step pose guidance (front / right / left / chin-up) and auto-capture; async analysis polling, Canvas 2D 10-dimension radar chart and skin trend curve, dynamic score poster, and retest subscription messages.",
+      "WeChat mini-program version of the skin-analysis flow: 15 pages, with WeChat VisionKit and 106 keypoints for four-step pose guidance (front / right / left / chin-up) and auto-capture; async analysis polling, Canvas 2D 10-dimension radar chart and skin trend curve, dynamic score poster, and retest subscription messages.",
   },
   {
     slug: "member-center-miniprogram",
@@ -158,7 +158,7 @@ export const projects: Project[] = [
   {
     slug: "myskin-website",
     id: "project-myskin",
-    name: "Myskin.Today Brand Website",
+    name: "Myskin.Today B2B Website",
     date: "Jan 2026 – Feb 2026",
     owner: "Independently led product, design, full-stack development, AIGC visuals, deployment, and operations",
     link: { href: "https://myskin.today", label: "myskin.today" },

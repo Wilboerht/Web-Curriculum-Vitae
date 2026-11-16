@@ -100,22 +100,63 @@ const ld = {
           <span>{ui.backLabel}</span>
         </a>
 
-        <label class="blog-lang">
-          <span class="blog-lang__current" aria-hidden="true">{localeInfo.label}</span>
-          <span class="blog-lang__chevron" aria-hidden="true"></span>
-          <select aria-label={ui.languageLabel} onchange="location.href=this.value">
-            {
-              LOCALES.map((item) => (
-                <option value={alternates[item.code]} selected={item.code === locale}>
-                  {item.full}
-                </option>
-              ))
-            }
-          </select>
-        </label>
-    </div>
+        <div class="blog-topbar__actions">
+          <button
+            type="button"
+            class="blog-toc-toggle"
+            aria-expanded="false"
+            aria-controls="blog-toc-menu"
+            aria-label={ui.headingsLabel}
+          >
+            <svg
+              class="blog-toc-toggle__icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M8 6h13"></path>
+              <path d="M8 12h13"></path>
+              <path d="M8 18h13"></path>
+              <path d="M3 6h.01"></path>
+              <path d="M3 12h.01"></path>
+              <path d="M3 18h.01"></path>
+            </svg>
+          </button>
 
-    <noscript>
+          <label class="blog-lang">
+            <span class="blog-lang__current" aria-hidden="true">{localeInfo.label}</span>
+            <span class="blog-lang__chevron" aria-hidden="true"></span>
+            <select aria-label={ui.languageLabel} onchange="location.href=this.value">
+              {
+                LOCALES.map((item) => (
+                  <option value={alternates[item.code]} selected={item.code === locale}>
+                    {item.full}
+                  </option>
+                ))
+              }
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <nav class="blog-toc-menu" id="blog-toc-menu" aria-label={ui.headingsLabel} hidden>
+        <p class="blog-toc-menu__label">{ui.headingsLabel}</p>
+        <ul>
+          {
+            details.map((detail, i) => (
+              <li>
+                <a href={`#section-${i + 1}`}>{stripColon(detail.title)}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <noscript>
         <nav class="blog-noscript" aria-label={ui.languageLabel}>
           {
             LOCALES.map((item) => (
@@ -224,9 +265,49 @@ const ld = {
   </footer>
 
   <script>
-    const toc = document.querySelector(".blog-toc");
-    if (toc) {
-      const links = Array.from(toc.querySelectorAll('a[href^="#section-"]'));
+    const tocToggle = document.querySelector(".blog-toc-toggle");
+    const tocMenu = document.querySelector(".blog-toc-menu");
+
+    if (tocToggle && tocMenu) {
+      const setOpen = (open, returnFocus = false) => {
+        tocMenu.hidden = !open;
+        tocToggle.setAttribute("aria-expanded", String(open));
+        if (!open && returnFocus) tocToggle.focus();
+      };
+
+      tocToggle.addEventListener("click", () => setOpen(tocMenu.hidden));
+
+      tocMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => setOpen(false));
+      });
+
+      document.addEventListener("click", (event) => {
+        if (tocMenu.hidden) return;
+        if (event.target instanceof Element && (tocMenu.contains(event.target) || tocToggle.contains(event.target))) {
+          return;
+        }
+        setOpen(false);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !tocMenu.hidden) setOpen(false, true);
+      });
+
+      const desktopQuery = window.matchMedia("(min-width: 1200px)");
+      const handleViewportChange = (event) => {
+        if (event.matches) setOpen(false);
+      };
+      if (desktopQuery.addEventListener) {
+        desktopQuery.addEventListener("change", handleViewportChange);
+      } else {
+        desktopQuery.addListener(handleViewportChange);
+      }
+    }
+
+    const links = Array.from(
+      document.querySelectorAll('.blog-toc a[href^="#section-"], .blog-toc-menu a[href^="#section-"]'),
+    );
+    if (links.length) {
       const sections = links
         .map((link) => {
           const href = link.getAttribute("href");

@@ -34,11 +34,11 @@ export const projects: Project[] = [
     logo: "/images/NIHPLOD-logo.svg",
     link: { href: "https://nihplod.cn", label: "nihplod.cn" },
     summary:
-      "中国市場向けブランドサイト兼会員プラットフォーム。商品紹介、EC誘導、会員ポイント、肌プロフィールを一つの体験に統合し、WeChat・Douyin・電話番号のIDを統一。オンライン販売の立ち上げとリピート購入を支援。205 APIルート / 51データモデル / 2,100件以上のテスト（本システム単体）。",
+      "中国市場向けブランドサイト兼会員プラットフォーム。商品紹介、EC誘導、会員ポイント、肌プロフィールを一つの体験に統合し、WeChat・Douyin・電話番号のIDを統一。オンライン販売の立ち上げとリピート購入を支援。274 APIルート / 60データモデル / 2,700件以上のテスト（本システム単体）。",
     details: [
       {
         title: "ブランドサイト・会員プラットフォーム：",
-        body: "Next.js 16 + Prisma + PostgreSQLでブランド公式サイトと会員プラットフォームを構築。商品紹介、外部EC誘導（Tmall / Douyin / Xiaohongshu / WeChat Shopリンク + GAイベント計測）、会員ランク、ポイント台帳、ポイント交換（SF Express配送追跡）、購入履歴の後付け登録、肌プロフィール、アカウントセキュリティセンターを実装。WeChat・Douyin・電話番号OTPのIDを統一アカウントに集約。205 APIルート、51データモデル、2,100件以上の自動テストを整備（本システム単体）。",
+        body: "Next.js 16 + Prisma + PostgreSQLでブランド公式サイトと会員プラットフォームを構築。商品紹介、外部EC誘導（Tmall / Douyin / Xiaohongshu / WeChat Shopリンク + GAイベント計測）、会員ランク、ポイント台帳、ポイント交換（SF Express配送追跡）、購入履歴の後付け登録、肌プロフィール、アカウントセキュリティセンターを実装。WeChat・Douyin・電話番号OTPのIDを統一アカウントに集約。274 APIルート、60データモデル、2,700件以上の自動テストを整備（本システム単体）。",
       },
       {
         title: "プロダクト・インタラクション設計：",
@@ -89,11 +89,11 @@ export const projects: Project[] = [
     logo: "/images/NIHPLOD-logo.svg",
     link: { href: "https://smart.nihplod.cn", label: "smart.nihplod.cn" },
     summary:
-      "消費者向けAIスキンケアアドバイザー。アンケートと顔画像による2チャネルの肌診断、肌質・季節・地域に基づくパーソナライズ商品提案を提供。レポートと肌プロフィールをWeComアドバイザーへ連携し、診断からスキンケア提案、フォローアップ、リピート購入までの循環を実現。93 APIルート / 531テスト。",
+      "消費者向けAIスキンケアアドバイザー。アンケートと顔画像による2チャネルの肌診断、肌質・季節・地域に基づくパーソナライズ商品提案を提供。レポートと肌プロフィールをWeComアドバイザーへ連携し、診断からスキンケア提案、フォローアップ、リピート購入までの循環を実現。100 APIルート / 616テスト。",
     details: [
       {
         title: "AI肌診断・パーソナライズ提案：",
-        body: "Qwen VL / DeepSeek LLMを統合し、アンケートと顔画像による2チャネルの肌診断を実現。独自ルールエンジンが8種類の肌タイプと季節・地域の環境要因に基づいて商品を採点・マッチング。ビジュアル管理画面から設定でき、運営担当者がコードなしで調整可能。",
+        body: "Qwen VL / DeepSeek LLMを統合し、アンケートと顔画像による2チャネルの肌診断を実現。独自ルールエンジンが7種類の肌タイプと季節・地域の環境要因に基づいて商品を採点・マッチング。ビジュアル管理画面から設定でき、運営担当者がコードなしで調整可能。",
       },
       {
         title: "コンバージョン・アトリビューション：",
@@ -125,13 +125,13 @@ export const projects: Project[] = [
     owner: "プロダクト・フルスタック開発・デプロイ・運用：独立担当",
     link: { href: "https://kf.nihplod.cn", label: "kf.nihplod.cn" },
     summary:
-      "FastAPI + Redis + DeepSeekによるWeCom AIカスタマーサービス：WeComカスタマーサービス、WeComアプリ、WeChat公式アカウントの3つのメッセージ入口を統合し、スマートな有人引き継ぎ、肌プロフィールの継承、7×24の伴走型フォローを実現。44KBのブランドFAQナレッジベース、34件のゴールデン回帰ケース、340件以上の自動テスト、PIPL準拠の個人情報エクスポート・削除機能を備える。",
+      "FastAPI + Redis + DeepSeekによるWeCom AIカスタマーサービス：WeComカスタマーサービスを主入口とし、WeComアプリ / WeChat公式アカウントのコールバックにも対応。スマートな有人引き継ぎ、肌プロフィールの継承、7×24のAI応答を実現。44KBのブランドFAQナレッジベース、49件のゴールデン回帰ケース、370件以上の自動テスト、PIPL準拠の個人情報エクスポート・削除機能を備える。",
   },
   {
     slug: "authorization-verification",
     id: "project-authorization",
     name: "NIHPLOD 認証検証プラットフォーム",
-    date: "2026年4月 – 2026年5月",
+    date: "2026年4月 – 現在",
     owner: "プロダクト・デザイン・フルスタック開発・デプロイ・運用：独立担当",
     link: { href: "https://ba.nihplod.cn", label: "ba.nihplod.cn" },
     summary:
@@ -144,7 +144,7 @@ export const projects: Project[] = [
     date: "2026年10月 – 現在",
     owner: "プロダクト・デザイン・ミニプログラム開発・デプロイ・運用：独立担当",
     summary:
-      "肌診断H5のWeChatミニプログラム版：14ページ、WeChat VisionKitと106キーポイントによる正面 / 右 / 左 / あご上げの4段階姿勢ガイドと自動撮影。非同期分析ポーリング、Canvas 2Dの10次元レーダーチャートと肌トレンド曲線、動的スコアポスター、再診断サブスクリプションメッセージ。",
+      "肌診断H5のWeChatミニプログラム版：15ページ、WeChat VisionKitと106キーポイントによる正面 / 右 / 左 / あご上げの4段階姿勢ガイドと自動撮影。非同期分析ポーリング、Canvas 2Dの10次元レーダーチャートと肌トレンド曲線、動的スコアポスター、再診断サブスクリプションメッセージ。",
   },
   {
     slug: "member-center-miniprogram",
@@ -158,7 +158,7 @@ export const projects: Project[] = [
   {
     slug: "myskin-website",
     id: "project-myskin",
-    name: "Myskin.Today ブランドサイト",
+    name: "Myskin.Today B2Bサイト",
     date: "2026年1月 – 2026年2月",
     owner: "プロダクト・デザイン・フルスタック開発・AIGCビジュアル・デプロイ・運用：独立担当",
     link: { href: "https://myskin.today", label: "myskin.today" },

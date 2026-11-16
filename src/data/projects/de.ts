@@ -34,11 +34,11 @@ export const projects: Project[] = [
     logo: "/images/NIHPLOD-logo.svg",
     link: { href: "https://nihplod.cn", label: "nihplod.cn" },
     summary:
-      "Markenwebsite und Mitgliederplattform für den China-Markt: verbindet Produktpräsentation, E-Commerce-Verlinkung, Mitgliederpunkte und Hautprofile in einem integrierten Erlebnis, vereinheitlicht WeChat-, Douyin- und Telefonnummern-Identitäten und unterstützt den Online-Handel von Grund auf sowie Wiederkäufe; 205 API-Routen / 51 Modelle / 2.100+ Tests (dieses System allein).",
+      "Markenwebsite und Mitgliederplattform für den China-Markt: verbindet Produktpräsentation, E-Commerce-Verlinkung, Mitgliederpunkte und Hautprofile in einem integrierten Erlebnis, vereinheitlicht WeChat-, Douyin- und Telefonnummern-Identitäten und unterstützt den Online-Handel von Grund auf sowie Wiederkäufe; 274 API-Routen / 60 Modelle / 2.700+ Tests (dieses System allein).",
     details: [
       {
         title: "Markenwebsite & Mitgliederplattform:",
-        body: "Die offizielle Markenwebsite und Mitgliederplattform mit Next.js 16 + Prisma + PostgreSQL aufgebaut — Produktpräsentation, Drittanbieter-E-Commerce-Verlinkung (Tmall / Douyin / Xiaohongshu / WeChat Shop + GA-Event-Tracking), Mitgliedsstufen, Punktejournal, Punkte-Einlösung (SF-Express-Tracking), manuelle Erfassung von Offline-Käufen, Hautprofile und ein Kontosicherheitszentrum; WeChat-, Douyin- und Telefon-OTP-Identitäten in einem einheitlichen Kontosystem zusammengeführt — 205 API-Routen, 51 Datenmodelle und 2.100+ automatisierte Testfälle (dieses System allein).",
+        body: "Die offizielle Markenwebsite und Mitgliederplattform mit Next.js 16 + Prisma + PostgreSQL aufgebaut — Produktpräsentation, Drittanbieter-E-Commerce-Verlinkung (Tmall / Douyin / Xiaohongshu / WeChat Shop + GA-Event-Tracking), Mitgliedsstufen, Punktejournal, Punkte-Einlösung (SF-Express-Tracking), manuelle Erfassung von Offline-Käufen, Hautprofile und ein Kontosicherheitszentrum; WeChat-, Douyin- und Telefon-OTP-Identitäten in einem einheitlichen Kontosystem zusammengeführt — 274 API-Routen, 60 Datenmodelle und 2.700+ automatisierte Testfälle (dieses System allein).",
       },
       {
         title: "Produkt- & Interaktionsdesign:",
@@ -89,11 +89,11 @@ export const projects: Project[] = [
     logo: "/images/NIHPLOD-logo.svg",
     link: { href: "https://smart.nihplod.cn", label: "smart.nihplod.cn" },
     summary:
-      "Ein KI-Hautpflegeberater für Verbraucher: zweikanalige Hautanalyse per Fragebogen + Gesichtsscan, personalisierte Produktempfehlungen nach Hauttyp, Jahreszeit und Region sowie Übergabe von Berichten und Profilen an WeCom-Berater – geschlossener Kreislauf von Analyse über Pflegeplan und Follow-up bis zum Wiederkauf; 93 API-Routen / 531 Tests.",
+      "Ein KI-Hautpflegeberater für Verbraucher: zweikanalige Hautanalyse per Fragebogen + Gesichtsscan, personalisierte Produktempfehlungen nach Hauttyp, Jahreszeit und Region sowie Übergabe von Berichten und Profilen an WeCom-Berater – geschlossener Kreislauf von Analyse über Pflegeplan und Follow-up bis zum Wiederkauf; 100 API-Routen / 616 Tests.",
     details: [
       {
         title: "KI-Hautanalyse & personalisierte Empfehlungen:",
-        body: "Qwen VL / DeepSeek-LLMs für die zweikanalige Hautanalyse (Fragebogen + Gesichtsscan) integriert; eine eigene Regel-Engine bewertet Produkte anhand von 8 Hauttypen sowie saisonalen / regionalen Umweltfaktoren — über eine visuelle Admin-Konsole konfigurierbar, sodass das Betriebsteam ohne Programmieraufwand anpassen kann.",
+        body: "Qwen VL / DeepSeek-LLMs für die zweikanalige Hautanalyse (Fragebogen + Gesichtsscan) integriert; eine eigene Regel-Engine bewertet Produkte anhand von 7 Hauttypen sowie saisonalen / regionalen Umweltfaktoren — über eine visuelle Admin-Konsole konfigurierbar, sodass das Betriebsteam ohne Programmieraufwand anpassen kann.",
       },
       {
         title: "Conversion & Attribution:",
@@ -125,13 +125,13 @@ export const projects: Project[] = [
     owner: "Produkt, Full-Stack-Entwicklung, Deployment und Betrieb eigenverantwortlich geleitet",
     link: { href: "https://kf.nihplod.cn", label: "kf.nihplod.cn" },
     summary:
-      "WeCom-KI-Kundenservice mit FastAPI + Redis + DeepSeek: vereint drei Nachrichteneingänge (WeCom-Kundenservice, WeCom-App und WeChat Official Account), unterstützt intelligente Übergabe an Menschen, übernimmt Hautpflegeprofile und bietet 7×24-Begleitung; 44KB Marken-FAQ-Wissensbasis, 34 Golden-Regressionfälle, 340+ automatisierte Tests und PIPL-konforme Export-/Löschfunktionen für personenbezogene Daten.",
+      "WeCom-KI-Kundenservice mit FastAPI + Redis + DeepSeek, ausgerichtet auf den WeCom-Kundenservice als primären Eingang und ergänzt um WeCom-App- / WeChat-Official-Account-Callbacks: unterstützt intelligente Übergabe an Menschen, übernimmt Hautpflegeprofile und bietet 7×24-KI-Antworten; 44KB Marken-FAQ-Wissensbasis, 49 Golden-Regressionfälle, 370+ automatisierte Tests und PIPL-konforme Export-/Löschfunktionen für personenbezogene Daten.",
   },
   {
     slug: "authorization-verification",
     id: "project-authorization",
     name: "NIHPLOD Autorisierungs- und Verifizierungsplattform",
-    date: "Apr. 2026 – Mai 2026",
+    date: "Apr. 2026 – heute",
     owner: "Produkt, Design, Full-Stack-Entwicklung, Deployment und Betrieb eigenverantwortlich geleitet",
     link: { href: "https://ba.nihplod.cn", label: "ba.nihplod.cn" },
     summary:
@@ -144,7 +144,7 @@ export const projects: Project[] = [
     date: "Okt. 2026 – heute",
     owner: "Produkt, Design, Mini-Programm-Entwicklung, Deployment und Betrieb eigenverantwortlich geleitet",
     summary:
-      "WeChat-Mini-Programm-Version des Hautanalyse-Flows: 14 Seiten, mit WeChat VisionKit und 106 Keypoints für vierstufige Positivierungsführung (vorne / rechts / links / Kinn hoch) und automatische Aufnahme; asynchrone Analyse-Abfragen, Canvas-2D-Radar-Diagramm mit 10 Dimensionen und Hauttrendkurve, dynamisches Score-Poster und Retest-Abo-Nachrichten.",
+      "WeChat-Mini-Programm-Version des Hautanalyse-Flows: 15 Seiten, mit WeChat VisionKit und 106 Keypoints für vierstufige Positivierungsführung (vorne / rechts / links / Kinn hoch) und automatische Aufnahme; asynchrone Analyse-Abfragen, Canvas-2D-Radar-Diagramm mit 10 Dimensionen und Hauttrendkurve, dynamisches Score-Poster und Retest-Abo-Nachrichten.",
   },
   {
     slug: "member-center-miniprogram",
@@ -158,7 +158,7 @@ export const projects: Project[] = [
   {
     slug: "myskin-website",
     id: "project-myskin",
-    name: "Myskin.Today Markenwebsite",
+    name: "Myskin.Today B2B-Website",
     date: "Jan. 2026 – Feb. 2026",
     owner: "Produkt, Design, Full-Stack-Entwicklung, AIGC-Visuals, Deployment und Betrieb eigenverantwortlich geleitet",
     link: { href: "https://myskin.today", label: "myskin.today" },

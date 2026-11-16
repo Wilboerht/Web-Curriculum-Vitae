@@ -34,11 +34,11 @@ export const projects: Project[] = [
     logo: "/images/NIHPLOD-logo.svg",
     link: { href: "https://nihplod.cn", label: "nihplod.cn" },
     summary:
-      "品牌在中国市场的官网与会员平台：整合产品展示、电商导购、会员积分与测肤档案，统一微信、抖音、手机号等多来源账号；支撑品牌线上零售从零上线与复购，205 API / 51 模型 / 2,100+ 测试（官网单系统）。",
+      "品牌在中国市场的官网与会员平台：整合产品展示、电商导购、会员积分与测肤档案，统一微信、抖音、手机号等多来源账号；支撑品牌线上零售从零上线与复购，274 API / 60 模型 / 2,700+ 测试（官网单系统）。",
     details: [
       {
         title: "品牌官网与会员平台：",
-        body: "基于 Next.js 16 + Prisma + PostgreSQL 构建品牌官网、产品陈列与第三方电商导购（天猫 / 抖音 / 小红书 / 微信小店外链 + GA 事件追踪），并实现会员等级、积分账本、积分兑礼（对接顺丰物流轨迹）、线下消费补录、测肤档案与账号安全中心；聚合微信、抖音、手机号验证码等多来源身份至统一账号体系；全站 205 个 API 路由、51 个数据模型、2,100+ 个自动化测试用例（该单系统）。",
+        body: "基于 Next.js 16 + Prisma + PostgreSQL 构建品牌官网、产品陈列与第三方电商导购（天猫 / 抖音 / 小红书 / 微信小店外链 + GA 事件追踪），并实现会员等级、积分账本、积分兑礼（对接顺丰物流轨迹）、线下消费补录、测肤档案与账号安全中心；聚合微信、抖音、手机号验证码等多来源身份至统一账号体系；全站 274 个 API 路由、60 个数据模型、2,700+ 个自动化测试用例（该单系统）。",
       },
       {
         title: "产品与交互设计：",
@@ -89,11 +89,11 @@ export const projects: Project[] = [
     logo: "/images/NIHPLOD-logo.svg",
     link: { href: "https://smart.nihplod.cn", label: "smart.nihplod.cn" },
     summary:
-      "面向消费者的 AI 护肤顾问：以「问卷 + 面部扫描」双通道完成皮肤分析，结合肤质 / 季节 / 地域规则生成个性化产品方案，并将报告与档案同步至企业微信（企微）顾问，形成「测肤 → 方案 → 跟进 → 复购」闭环；93 API / 531 测试。",
+      "面向消费者的 AI 护肤顾问：以「问卷 + 面部扫描」双通道完成皮肤分析，结合肤质 / 季节 / 地域规则生成个性化产品方案，并将报告与档案同步至企业微信（企微）顾问，形成「测肤 → 方案 → 跟进 → 复购」闭环；100 API / 616 测试。",
     details: [
       {
         title: "AI 测肤与个性化推荐：",
-        body: "接入Qwen VL / DeepSeek 大模型实现「问卷 + 面部扫描」双通道皮肤分析；自研规则引擎按 8 种肤质类型与季节 / 地域环境因子评分并匹配产品，支持后台可视化配置，运营无需编写代码即可调整。",
+        body: "接入Qwen VL / DeepSeek 大模型实现「问卷 + 面部扫描」双通道皮肤分析；自研规则引擎按 7 种肤质类型与季节 / 地域环境因子评分并匹配产品，支持后台可视化配置，运营无需编写代码即可调整。",
       },
       {
         title: "转化与归因：",
@@ -125,13 +125,13 @@ export const projects: Project[] = [
     owner: "产品、全栈开发与部署运维独立负责",
     link: { href: "https://kf.nihplod.cn", label: "kf.nihplod.cn" },
     summary:
-      "基于 FastAPI + Redis + DeepSeek 的企业微信 AI 客服：统一企微客服、企微应用与公众号三个入口，支持智能转人工、护肤档案继承与 7×24 陪伴式跟进；44KB 品牌 FAQ 知识库、34 条金标回归用例、340+ 自动化测试，并满足 PIPL 个人信息导出与删除要求。",
+      "基于 FastAPI + Redis + DeepSeek 的企业微信 AI 客服：以企微客服为主入口，兼容企微应用/公众号回调，支持智能转人工、护肤档案继承与 7×24 AI 响应；44KB 品牌 FAQ 知识库、49 条金标回归用例、370+ 自动化测试，并满足 PIPL 个人信息导出与删除要求。",
   },
   {
     slug: "authorization-verification",
     id: "project-authorization",
     name: "NIHPLOD 授权验真平台",
-    date: "2026.04 – 2026.05",
+    date: "2026.04 – 至今",
     owner: "产品、设计、全栈开发与部署运维独立负责",
     link: { href: "https://ba.nihplod.cn", label: "ba.nihplod.cn" },
     summary:
@@ -144,7 +144,7 @@ export const projects: Project[] = [
     date: "2026.10 – 至今",
     owner: "产品、设计、小程序开发与部署运维独立负责",
     summary:
-      "测肤 H5 的微信小程序版：14 个页面，基于微信 VisionKit 106 个关键点实现正脸 / 右侧 / 左侧 / 抬下巴四步姿态引导与自动抓拍；异步分析轮询、Canvas 2D 十维雷达图与肌肤趋势曲线、动态评分海报与复测订阅消息。",
+      "测肤 H5 的微信小程序版：15 个页面，基于微信 VisionKit 106 个关键点实现正脸 / 右侧 / 左侧 / 抬下巴四步姿态引导与自动抓拍；异步分析轮询、Canvas 2D 十维雷达图与肌肤趋势曲线、动态评分海报与复测订阅消息。",
   },
   {
     slug: "member-center-miniprogram",
@@ -158,7 +158,7 @@ export const projects: Project[] = [
   {
     slug: "myskin-website",
     id: "project-myskin",
-    name: "Myskin.Today 品牌官网",
+    name: "Myskin.Today B2B 官网",
     date: "2026.01 – 2026.02",
     owner: "产品、设计、全栈开发、AIGC 视觉与部署运维独立负责",
     link: { href: "https://myskin.today", label: "myskin.today" },
