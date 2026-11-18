@@ -27,16 +27,6 @@ const locales: Record<string, string> = {
   ja: "ja-JP",
 };
 
-const names: Record<string, string> = {
-  "zh-CN": "王泓坤",
-  "zh-TW": "王泓坤",
-  "zh-HK": "王泓坤",
-  en: "Hongkun Wang",
-  de: "Hongkun Wang",
-  ko: "王泓坤",
-  ja: "王泓坤",
-};
-
 const updated = new Date(CONTENT_LAST_UPDATED);
 const formatted = new Intl.DateTimeFormat(locales[lang] ?? "en-US", {
   year: "numeric",
@@ -46,14 +36,11 @@ const formatted = new Intl.DateTimeFormat(locales[lang] ?? "en-US", {
 }).format(updated);
 
 const label = labels[lang] ?? labels.en;
-const name = names[lang] ?? names.en;
 ---
 
 <footer class="site-footer">
   <p class="site-footer__updated">
-    <span>{label}<time datetime={CONTENT_LAST_UPDATED}>{formatted}</time></span>
-    <span aria-hidden="true">·</span>
-    <span class="site-footer__copyright">© {name}</span>
+    {label}<time datetime={CONTENT_LAST_UPDATED}>{formatted}</time>
   </p>
 </footer>
 
@@ -69,17 +56,8 @@ const name = names[lang] ?? names.en;
   }
 
   .site-footer__updated {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: baseline;
-    gap: 4px 16px;
     margin: 0;
     font-variant-numeric: tabular-nums lining-nums;
-  }
-
-  .site-footer__copyright {
-    white-space: nowrap;
   }
 
   @media (max-width: 600px) {
