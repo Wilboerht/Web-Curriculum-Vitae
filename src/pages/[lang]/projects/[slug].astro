@@ -42,7 +42,6 @@ const alternates = Object.fromEntries(
 const title = `${project.name} · ${ui.personName}`;
 const details = project.details ?? [];
 const stack = PROJECT_STACKS[slug];
-const year = new Date().getUTCFullYear();
 
 const titleMatch = project.name.match(/^NIHPLOD\s+(.+)$/i);
 const showLogo = Boolean(titleMatch);
@@ -253,16 +252,6 @@ const ld = {
       </aside>
     </div>
   </div>
-
-  <footer class="blog-pagefooter">
-    <div class="blog-pagefooter__inner">
-      <p>© {year} {ui.personName}</p>
-      <a href={backHref}>
-        <span aria-hidden="true">←</span>
-        {ui.backLabel}
-      </a>
-    </div>
-  </footer>
 
   <script>
     const tocToggle = document.querySelector(".blog-toc-toggle");
